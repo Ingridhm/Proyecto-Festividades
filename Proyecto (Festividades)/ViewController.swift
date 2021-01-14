@@ -9,9 +9,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var BienvenidoView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        Estilos()
+    }
+    
+    func Estilos(){
+        BienvenidoView.layer.cornerRadius = 10
+        BienvenidoView.backgroundColor = UIColor.gray.withAlphaComponent(0.8)
     }
 
 
