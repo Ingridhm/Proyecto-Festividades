@@ -135,18 +135,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oMw-V5-wY9">
-                                <rect key="frame" x="20" y="55" width="374" height="733"/>
+                                <rect key="frame" x="25" y="135" width="364" height="653"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celda" textLabel="cep-jx-lHR" style="IBUITableViewCellStyleDefault" id="ulx-Cc-zig">
-                                        <rect key="frame" x="0.0" y="28" width="374" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="28" width="364" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ulx-Cc-zig" id="M8p-9W-gWk" customClass="FestividadTableViewCell" customModule="Proyecto__Festividades_" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="364" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cep-jx-lHR">
-                                                    <rect key="frame" x="20" y="0.0" width="334" height="43.5"/>
+                                                    <rect key="frame" x="20" y="0.0" width="324" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -157,18 +157,59 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OqI-CS-mEB">
+                                <rect key="frame" x="25" y="40" width="364" height="65"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ekw-iG-c1n">
+                                        <rect key="frame" x="10" y="10" width="344" height="45"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="compass" translatesAutoresizingMaskIntoConstraints="NO" id="f6U-PA-tgp">
+                                                <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="45" id="g79-Ff-fHX"/>
+                                                    <constraint firstAttribute="width" constant="45" id="jH9-Yc-xeK"/>
+                                                </constraints>
+                                            </imageView>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Buscar País..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OoB-f3-pw8">
+                                                <rect key="frame" x="53" y="0.0" width="238" height="45"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="0al-yO-F3j">
+                                                <rect key="frame" x="299" y="0.0" width="45" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="45" id="9gn-SN-9wW"/>
+                                                    <constraint firstAttribute="height" constant="45" id="QAp-de-Zyx"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ekw-iG-c1n" secondAttribute="trailing" constant="10" id="80D-BF-FLS"/>
+                                    <constraint firstItem="ekw-iG-c1n" firstAttribute="top" secondItem="OqI-CS-mEB" secondAttribute="top" constant="10" id="9oc-nf-iS5"/>
+                                    <constraint firstAttribute="bottom" secondItem="ekw-iG-c1n" secondAttribute="bottom" constant="10" id="R5C-iG-qWQ"/>
+                                    <constraint firstItem="ekw-iG-c1n" firstAttribute="leading" secondItem="OqI-CS-mEB" secondAttribute="leading" constant="10" id="tYv-uM-bJ3"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1WA-uQ-Jgl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="1WA-uQ-Jgl" firstAttribute="trailing" secondItem="oMw-V5-wY9" secondAttribute="trailing" constant="20" id="WpW-SV-fXM"/>
-                            <constraint firstItem="oMw-V5-wY9" firstAttribute="leading" secondItem="1WA-uQ-Jgl" secondAttribute="leading" constant="20" id="btO-5q-ZOo"/>
+                            <constraint firstItem="oMw-V5-wY9" firstAttribute="top" secondItem="OqI-CS-mEB" secondAttribute="bottom" constant="30" id="A6S-18-Kgu"/>
+                            <constraint firstItem="1WA-uQ-Jgl" firstAttribute="trailing" secondItem="oMw-V5-wY9" secondAttribute="trailing" constant="25" id="WpW-SV-fXM"/>
+                            <constraint firstItem="OqI-CS-mEB" firstAttribute="leading" secondItem="1WA-uQ-Jgl" secondAttribute="leading" constant="25" id="aRa-qc-dXH"/>
+                            <constraint firstItem="oMw-V5-wY9" firstAttribute="leading" secondItem="1WA-uQ-Jgl" secondAttribute="leading" constant="25" id="btO-5q-ZOo"/>
                             <constraint firstItem="1WA-uQ-Jgl" firstAttribute="bottom" secondItem="oMw-V5-wY9" secondAttribute="bottom" constant="20" id="eTS-b8-Kko"/>
-                            <constraint firstItem="oMw-V5-wY9" firstAttribute="top" secondItem="1WA-uQ-Jgl" secondAttribute="top" constant="55" id="eUV-G4-UK9"/>
+                            <constraint firstItem="1WA-uQ-Jgl" firstAttribute="trailing" secondItem="OqI-CS-mEB" secondAttribute="trailing" constant="25" id="pWp-41-h8u"/>
+                            <constraint firstItem="OqI-CS-mEB" firstAttribute="top" secondItem="1WA-uQ-Jgl" secondAttribute="top" constant="40" id="uX6-80-moX"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="B1N-Af-qCj"/>
                     <connections>
+                        <outlet property="BuscarView" destination="OqI-CS-mEB" id="Ak4-ZB-KY1"/>
                         <outlet property="Tabla" destination="oMw-V5-wY9" id="2o0-UQ-3fa"/>
                     </connections>
                 </viewController>
@@ -179,6 +220,8 @@
     </scenes>
     <resources>
         <image name="bg" width="313" height="208.5"/>
+        <image name="calendar" width="512" height="512"/>
+        <image name="compass" width="512" height="512"/>
         <image name="fireworks" width="313" height="223.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

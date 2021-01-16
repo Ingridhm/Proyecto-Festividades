@@ -11,9 +11,10 @@ import UIKit
 class FestividadesViewController : UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var Tabla: UITableView!
+    @IBOutlet weak var BuscarView: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        Tabla.backgroundColor = UIColor.clear
+        Estilos()
         Tabla.dataSource = self
         Tabla.delegate = self
         Tabla.register(UINib(nibName: "FestividadTableViewCell", bundle: nil), forCellReuseIdentifier: "celda")
@@ -34,6 +35,12 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         cell.backgroundColor = UIColor.clear
+    }
+    
+    func Estilos() {
+        Tabla.backgroundColor = UIColor.clear
+        BuscarView.backgroundColor = UIColor.gray.withAlphaComponent(0.9)
+        BuscarView.layer.cornerRadius = 10
     }
     
     /*func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
