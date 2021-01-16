@@ -14,6 +14,9 @@
 		BF91352825AFC654000DD9C1 /* Proyecto__Festividades_.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF91352625AFC654000DD9C1 /* Proyecto__Festividades_.xcdatamodeld */; };
 		BF91352A25AFC655000DD9C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF91352925AFC655000DD9C1 /* Assets.xcassets */; };
 		BF91352D25AFC655000DD9C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF91352B25AFC655000DD9C1 /* LaunchScreen.storyboard */; };
+		BFFCAFF625B2721300349AD0 /* FestividadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFCAFF425B2721300349AD0 /* FestividadTableViewCell.swift */; };
+		BFFCAFF725B2721300349AD0 /* FestividadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFFCAFF525B2721300349AD0 /* FestividadTableViewCell.xib */; };
+		BFFCAFFA25B2772300349AD0 /* FestividadesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFCAFF925B2772300349AD0 /* FestividadesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		BF91352925AFC655000DD9C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF91352C25AFC655000DD9C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF91352E25AFC655000DD9C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFFCAFF425B2721300349AD0 /* FestividadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestividadTableViewCell.swift; sourceTree = "<group>"; };
+		BFFCAFF525B2721300349AD0 /* FestividadTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FestividadTableViewCell.xib; sourceTree = "<group>"; };
+		BFFCAFF925B2772300349AD0 /* FestividadesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestividadesViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,9 @@
 				BF91352B25AFC655000DD9C1 /* LaunchScreen.storyboard */,
 				BF91352E25AFC655000DD9C1 /* Info.plist */,
 				BF91352625AFC654000DD9C1 /* Proyecto__Festividades_.xcdatamodeld */,
+				BFFCAFF425B2721300349AD0 /* FestividadTableViewCell.swift */,
+				BFFCAFF525B2721300349AD0 /* FestividadTableViewCell.xib */,
+				BFFCAFF925B2772300349AD0 /* FestividadesViewController.swift */,
 			);
 			path = "Proyecto (Festividades)";
 			sourceTree = "<group>";
@@ -129,6 +138,7 @@
 			files = (
 				BF91352D25AFC655000DD9C1 /* LaunchScreen.storyboard in Resources */,
 				BF91352A25AFC655000DD9C1 /* Assets.xcassets in Resources */,
+				BFFCAFF725B2721300349AD0 /* FestividadTableViewCell.xib in Resources */,
 				BF91352525AFC654000DD9C1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -142,6 +152,8 @@
 			files = (
 				BF91352225AFC654000DD9C1 /* ViewController.swift in Sources */,
 				BF91352825AFC654000DD9C1 /* Proyecto__Festividades_.xcdatamodeld in Sources */,
+				BFFCAFFA25B2772300349AD0 /* FestividadesViewController.swift in Sources */,
+				BFFCAFF625B2721300349AD0 /* FestividadTableViewCell.swift in Sources */,
 				BF91351E25AFC654000DD9C1 /* AppDelegate.swift in Sources */,
 				BF91352025AFC654000DD9C1 /* SceneDelegate.swift in Sources */,
 			);

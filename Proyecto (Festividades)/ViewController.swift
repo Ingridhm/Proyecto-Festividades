@@ -17,9 +17,8 @@ class ViewController: UIViewController {
     
     func Estilos(){
         BienvenidoView.layer.cornerRadius = 10
-        BienvenidoView.backgroundColor = UIColor.gray.withAlphaComponent(0.8)
+        BienvenidoView.backgroundColor = UIColor.white.withAlphaComponent(0.7)
     }
-
-
+    
 }
 
