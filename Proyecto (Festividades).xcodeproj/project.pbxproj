@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF6EF7E125B406E000D57AC5 /* CuentaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6EF7E025B406E000D57AC5 /* CuentaViewController.swift */; };
+		BF6EF7EA25B4145A00D57AC5 /* OpcionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6EF7E825B4145A00D57AC5 /* OpcionCollectionViewCell.swift */; };
+		BF6EF7EB25B4145A00D57AC5 /* OpcionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF6EF7E925B4145A00D57AC5 /* OpcionCollectionViewCell.xib */; };
 		BF91351E25AFC654000DD9C1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF91351D25AFC654000DD9C1 /* AppDelegate.swift */; };
 		BF91352025AFC654000DD9C1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF91351F25AFC654000DD9C1 /* SceneDelegate.swift */; };
 		BF91352225AFC654000DD9C1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF91352125AFC654000DD9C1 /* ViewController.swift */; };
@@ -14,12 +17,17 @@
 		BF91352825AFC654000DD9C1 /* Proyecto__Festividades_.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BF91352625AFC654000DD9C1 /* Proyecto__Festividades_.xcdatamodeld */; };
 		BF91352A25AFC655000DD9C1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF91352925AFC655000DD9C1 /* Assets.xcassets */; };
 		BF91352D25AFC655000DD9C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF91352B25AFC655000DD9C1 /* LaunchScreen.storyboard */; };
+		BFCF6E2F25B41CF20012E063 /* ConfiguracionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF6E2E25B41CF20012E063 /* ConfiguracionViewController.swift */; };
+		BFCF6E3225B41E270012E063 /* FavoritosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF6E3125B41E270012E063 /* FavoritosViewController.swift */; };
 		BFFCAFF625B2721300349AD0 /* FestividadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFCAFF425B2721300349AD0 /* FestividadTableViewCell.swift */; };
 		BFFCAFF725B2721300349AD0 /* FestividadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFFCAFF525B2721300349AD0 /* FestividadTableViewCell.xib */; };
 		BFFCAFFA25B2772300349AD0 /* FestividadesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFCAFF925B2772300349AD0 /* FestividadesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BF6EF7E025B406E000D57AC5 /* CuentaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuentaViewController.swift; sourceTree = "<group>"; };
+		BF6EF7E825B4145A00D57AC5 /* OpcionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpcionCollectionViewCell.swift; sourceTree = "<group>"; };
+		BF6EF7E925B4145A00D57AC5 /* OpcionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OpcionCollectionViewCell.xib; sourceTree = "<group>"; };
 		BF91351A25AFC654000DD9C1 /* Proyecto (Festividades).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Proyecto (Festividades).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF91351D25AFC654000DD9C1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF91351F25AFC654000DD9C1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -29,6 +37,8 @@
 		BF91352925AFC655000DD9C1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BF91352C25AFC655000DD9C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BF91352E25AFC655000DD9C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFCF6E2E25B41CF20012E063 /* ConfiguracionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguracionViewController.swift; sourceTree = "<group>"; };
+		BFCF6E3125B41E270012E063 /* FavoritosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosViewController.swift; sourceTree = "<group>"; };
 		BFFCAFF425B2721300349AD0 /* FestividadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestividadTableViewCell.swift; sourceTree = "<group>"; };
 		BFFCAFF525B2721300349AD0 /* FestividadTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FestividadTableViewCell.xib; sourceTree = "<group>"; };
 		BFFCAFF925B2772300349AD0 /* FestividadesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestividadesViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +85,11 @@
 				BFFCAFF425B2721300349AD0 /* FestividadTableViewCell.swift */,
 				BFFCAFF525B2721300349AD0 /* FestividadTableViewCell.xib */,
 				BFFCAFF925B2772300349AD0 /* FestividadesViewController.swift */,
+				BF6EF7E025B406E000D57AC5 /* CuentaViewController.swift */,
+				BF6EF7E825B4145A00D57AC5 /* OpcionCollectionViewCell.swift */,
+				BF6EF7E925B4145A00D57AC5 /* OpcionCollectionViewCell.xib */,
+				BFCF6E2E25B41CF20012E063 /* ConfiguracionViewController.swift */,
+				BFCF6E3125B41E270012E063 /* FavoritosViewController.swift */,
 			);
 			path = "Proyecto (Festividades)";
 			sourceTree = "<group>";
@@ -140,6 +155,7 @@
 				BF91352A25AFC655000DD9C1 /* Assets.xcassets in Resources */,
 				BFFCAFF725B2721300349AD0 /* FestividadTableViewCell.xib in Resources */,
 				BF91352525AFC654000DD9C1 /* Main.storyboard in Resources */,
+				BF6EF7EB25B4145A00D57AC5 /* OpcionCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,7 +169,11 @@
 				BF91352225AFC654000DD9C1 /* ViewController.swift in Sources */,
 				BF91352825AFC654000DD9C1 /* Proyecto__Festividades_.xcdatamodeld in Sources */,
 				BFFCAFFA25B2772300349AD0 /* FestividadesViewController.swift in Sources */,
+				BF6EF7E125B406E000D57AC5 /* CuentaViewController.swift in Sources */,
+				BFCF6E3225B41E270012E063 /* FavoritosViewController.swift in Sources */,
+				BF6EF7EA25B4145A00D57AC5 /* OpcionCollectionViewCell.swift in Sources */,
 				BFFCAFF625B2721300349AD0 /* FestividadTableViewCell.swift in Sources */,
+				BFCF6E2F25B41CF20012E063 /* ConfiguracionViewController.swift in Sources */,
 				BF91351E25AFC654000DD9C1 /* AppDelegate.swift in Sources */,
 				BF91352025AFC654000DD9C1 /* SceneDelegate.swift in Sources */,
 			);

@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -13,14 +14,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Proyecto__Festividades_" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.40000000000000002" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="LcK-TY-gsM">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QOp-rj-CcY">
-                                <rect key="frame" x="50" y="236" width="314" height="424"/>
+                                <rect key="frame" x="50" y="192" width="314" height="414"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BIENVENIDO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1h4-Hz-vyh">
                                         <rect key="frame" x="20" y="20" width="274" height="30"/>
@@ -29,7 +30,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="sQO-y6-6wu">
-                                        <rect key="frame" x="20" y="115" width="274" height="289"/>
+                                        <rect key="frame" x="20" y="105" width="274" height="289"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="qlP-t6-UrF">
                                                 <rect key="frame" x="0.0" y="0.0" width="274" height="73"/>
@@ -75,7 +76,7 @@
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Iniciar Sesión"/>
                                                         <connections>
-                                                            <segue destination="M49-VV-ef9" kind="show" id="9T6-wz-HbA"/>
+                                                            <segue destination="kDg-5E-Vl7" kind="show" id="9T6-wz-HbA"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adl-qz-iNw">
@@ -114,6 +115,7 @@
                             <constraint firstItem="QOp-rj-CcY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="192" id="yLm-uz-ADs"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="LFX-3K-GOJ"/>
                     <connections>
                         <outlet property="BienvenidoView" destination="QOp-rj-CcY" id="LBB-VT-LNE"/>
                     </connections>
@@ -122,7 +124,7 @@
             </objects>
             <point key="canvasLocation" x="140.57971014492756" y="68.973214285714278"/>
         </scene>
-        <!--Festividades View Controller-->
+        <!--Buscar-->
         <scene sceneID="k58-O5-Zv3">
             <objects>
                 <viewController id="M49-VV-ef9" customClass="FestividadesViewController" customModule="Proyecto__Festividades_" customModuleProvider="target" sceneMemberID="viewController">
@@ -130,33 +132,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fireworks" translatesAutoresizingMaskIntoConstraints="NO" id="Tux-om-Y1J">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fireworks" translatesAutoresizingMaskIntoConstraints="NO" id="Tux-om-Y1J">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oMw-V5-wY9">
-                                <rect key="frame" x="25" y="135" width="364" height="653"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celda" textLabel="cep-jx-lHR" style="IBUITableViewCellStyleDefault" id="ulx-Cc-zig">
-                                        <rect key="frame" x="0.0" y="28" width="364" height="43.5"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ulx-Cc-zig" id="M8p-9W-gWk" customClass="FestividadTableViewCell" customModule="Proyecto__Festividades_" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="364" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cep-jx-lHR">
-                                                    <rect key="frame" x="20" y="0.0" width="324" height="43.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OqI-CS-mEB">
                                 <rect key="frame" x="25" y="40" width="364" height="65"/>
                                 <subviews>
@@ -194,20 +172,49 @@
                                     <constraint firstItem="ekw-iG-c1n" firstAttribute="leading" secondItem="OqI-CS-mEB" secondAttribute="leading" constant="10" id="tYv-uM-bJ3"/>
                                 </constraints>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oMw-V5-wY9">
+                                <rect key="frame" x="25" y="135" width="364" height="594"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celda" textLabel="cep-jx-lHR" style="IBUITableViewCellStyleDefault" id="ulx-Cc-zig">
+                                        <rect key="frame" x="0.0" y="28" width="364" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ulx-Cc-zig" id="M8p-9W-gWk" customClass="FestividadTableViewCell" customModule="Proyecto__Festividades_" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="364" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cep-jx-lHR">
+                                                    <rect key="frame" x="20" y="0.0" width="324" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1WA-uQ-Jgl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Tux-om-Y1J" firstAttribute="top" secondItem="1WA-uQ-Jgl" secondAttribute="top" id="5BK-9s-KQQ"/>
                             <constraint firstItem="oMw-V5-wY9" firstAttribute="top" secondItem="OqI-CS-mEB" secondAttribute="bottom" constant="30" id="A6S-18-Kgu"/>
+                            <constraint firstItem="Tux-om-Y1J" firstAttribute="leading" secondItem="1WA-uQ-Jgl" secondAttribute="leading" id="CPN-4E-TDb"/>
                             <constraint firstItem="1WA-uQ-Jgl" firstAttribute="trailing" secondItem="oMw-V5-wY9" secondAttribute="trailing" constant="25" id="WpW-SV-fXM"/>
+                            <constraint firstItem="Tux-om-Y1J" firstAttribute="trailing" secondItem="1WA-uQ-Jgl" secondAttribute="trailing" id="Zek-SI-AUb"/>
                             <constraint firstItem="OqI-CS-mEB" firstAttribute="leading" secondItem="1WA-uQ-Jgl" secondAttribute="leading" constant="25" id="aRa-qc-dXH"/>
                             <constraint firstItem="oMw-V5-wY9" firstAttribute="leading" secondItem="1WA-uQ-Jgl" secondAttribute="leading" constant="25" id="btO-5q-ZOo"/>
-                            <constraint firstItem="1WA-uQ-Jgl" firstAttribute="bottom" secondItem="oMw-V5-wY9" secondAttribute="bottom" constant="20" id="eTS-b8-Kko"/>
+                            <constraint firstItem="1WA-uQ-Jgl" firstAttribute="bottom" secondItem="oMw-V5-wY9" secondAttribute="bottom" constant="30" id="dTX-fs-omG"/>
+                            <constraint firstAttribute="bottom" secondItem="Tux-om-Y1J" secondAttribute="bottom" id="foj-c1-B6p"/>
                             <constraint firstItem="1WA-uQ-Jgl" firstAttribute="trailing" secondItem="OqI-CS-mEB" secondAttribute="trailing" constant="25" id="pWp-41-h8u"/>
                             <constraint firstItem="OqI-CS-mEB" firstAttribute="top" secondItem="1WA-uQ-Jgl" secondAttribute="top" constant="40" id="uX6-80-moX"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Buscar" id="g0U-5U-onk"/>
                     <navigationItem key="navigationItem" id="B1N-Af-qCj"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="BuscarView" destination="OqI-CS-mEB" id="Ak4-ZB-KY1"/>
                         <outlet property="Tabla" destination="oMw-V5-wY9" id="2o0-UQ-3fa"/>
@@ -215,19 +222,136 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LwW-QL-Tea" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="871.01449275362324" y="68.973214285714278"/>
+            <point key="canvasLocation" x="1781.1594202898552" y="68.973214285714278"/>
+        </scene>
+        <!--Favoritos View Controller-->
+        <scene sceneID="e5S-gq-uqY">
+            <objects>
+                <viewController id="34O-3c-daD" customClass="FavoritosViewController" customModule="Proyecto__Festividades_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Prp-Oo-0kl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="8tH-Wa-Wrj"/>
+                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="D1s-XN-FCE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cir-xi-wRT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4329" y="69"/>
+        </scene>
+        <!--Cuenta-->
+        <scene sceneID="Nf4-ag-Wny">
+            <objects>
+                <viewController id="lb9-Gn-reJ" customClass="CuentaViewController" customModule="Proyecto__Festividades_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="itD-uj-oNA">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.94999999999999996" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="config-bg-2" id="fJi-ty-2Jy">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="759"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wqr-ns-Ad3">
+                                <rect key="frame" x="55" y="95" width="304" height="560"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rml-3W-1vL">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="opcion" id="NDo-AK-u4v">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="9uG-hU-c7Z">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                        <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hB1-Uf-qdJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wqr-ns-Ad3" firstAttribute="top" secondItem="hB1-Uf-qdJ" secondAttribute="top" constant="95" id="ENo-Bs-uyL"/>
+                            <constraint firstItem="wqr-ns-Ad3" firstAttribute="leading" secondItem="hB1-Uf-qdJ" secondAttribute="leading" constant="55" id="Yfw-U2-PlN"/>
+                            <constraint firstItem="hB1-Uf-qdJ" firstAttribute="bottom" secondItem="wqr-ns-Ad3" secondAttribute="bottom" constant="104" id="jhq-Pa-hdP"/>
+                            <constraint firstItem="hB1-Uf-qdJ" firstAttribute="trailing" secondItem="wqr-ns-Ad3" secondAttribute="trailing" constant="55" id="whN-YL-Zl2"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Cuenta" id="1x2-12-M84"/>
+                    <connections>
+                        <outlet property="OpcionesGrid" destination="wqr-ns-Ad3" id="2wa-C1-4qJ"/>
+                        <segue destination="hJB-SV-j7h" kind="show" identifier="configuracion" id="DUH-Gr-uER"/>
+                        <segue destination="34O-3c-daD" kind="show" identifier="favoritos" id="sbs-NZ-fjH"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="cerrar-sesion" id="x9e-Bl-YEP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rRO-8U-Z11" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2609" y="69"/>
+        </scene>
+        <!--Configuracion View Controller-->
+        <scene sceneID="NgZ-MN-9w3">
+            <objects>
+                <viewController id="hJB-SV-j7h" customClass="ConfiguracionViewController" customModule="Proyecto__Festividades_" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="D8L-3a-zJP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="dEd-ke-EJM"/>
+                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="X4v-x0-mUT"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6DI-JE-elZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3455" y="69"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="5T0-9D-JM7">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="kDg-5E-Vl7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="H96-le-dmT"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Ib0-CA-pTX">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="M49-VV-ef9" kind="relationship" relationship="viewControllers" id="Hm9-aB-bYI"/>
+                        <segue destination="lb9-Gn-reJ" kind="relationship" relationship="viewControllers" id="81c-DL-Lgr"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jKS-MB-z2f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="961" y="69"/>
         </scene>
     </scenes>
     <resources>
         <image name="bg" width="313" height="208.5"/>
         <image name="calendar" width="512" height="512"/>
         <image name="compass" width="512" height="512"/>
+        <image name="config-bg-2" width="600" height="330"/>
         <image name="fireworks" width="313" height="223.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
