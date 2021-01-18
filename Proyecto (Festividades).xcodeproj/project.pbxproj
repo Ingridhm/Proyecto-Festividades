@@ -19,6 +19,9 @@
 		BF91352D25AFC655000DD9C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF91352B25AFC655000DD9C1 /* LaunchScreen.storyboard */; };
 		BFCF6E2F25B41CF20012E063 /* ConfiguracionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF6E2E25B41CF20012E063 /* ConfiguracionViewController.swift */; };
 		BFCF6E3225B41E270012E063 /* FavoritosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF6E3125B41E270012E063 /* FavoritosViewController.swift */; };
+		BFE550F625B502050080FB51 /* FestividadesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE550F525B502050080FB51 /* FestividadesData.swift */; };
+		BFE550F925B503BC0080FB51 /* FestividadesModelo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE550F825B503BC0080FB51 /* FestividadesModelo.swift */; };
+		BFE550FC25B506130080FB51 /* FestividadesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE550FB25B506130080FB51 /* FestividadesManager.swift */; };
 		BFFCAFF625B2721300349AD0 /* FestividadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFCAFF425B2721300349AD0 /* FestividadTableViewCell.swift */; };
 		BFFCAFF725B2721300349AD0 /* FestividadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFFCAFF525B2721300349AD0 /* FestividadTableViewCell.xib */; };
 		BFFCAFFA25B2772300349AD0 /* FestividadesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFCAFF925B2772300349AD0 /* FestividadesViewController.swift */; };
@@ -39,6 +42,9 @@
 		BF91352E25AFC655000DD9C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFCF6E2E25B41CF20012E063 /* ConfiguracionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguracionViewController.swift; sourceTree = "<group>"; };
 		BFCF6E3125B41E270012E063 /* FavoritosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosViewController.swift; sourceTree = "<group>"; };
+		BFE550F525B502050080FB51 /* FestividadesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestividadesData.swift; sourceTree = "<group>"; };
+		BFE550F825B503BC0080FB51 /* FestividadesModelo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestividadesModelo.swift; sourceTree = "<group>"; };
+		BFE550FB25B506130080FB51 /* FestividadesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestividadesManager.swift; sourceTree = "<group>"; };
 		BFFCAFF425B2721300349AD0 /* FestividadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestividadTableViewCell.swift; sourceTree = "<group>"; };
 		BFFCAFF525B2721300349AD0 /* FestividadTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FestividadTableViewCell.xib; sourceTree = "<group>"; };
 		BFFCAFF925B2772300349AD0 /* FestividadesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestividadesViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +96,9 @@
 				BF6EF7E925B4145A00D57AC5 /* OpcionCollectionViewCell.xib */,
 				BFCF6E2E25B41CF20012E063 /* ConfiguracionViewController.swift */,
 				BFCF6E3125B41E270012E063 /* FavoritosViewController.swift */,
+				BFE550F525B502050080FB51 /* FestividadesData.swift */,
+				BFE550F825B503BC0080FB51 /* FestividadesModelo.swift */,
+				BFE550FB25B506130080FB51 /* FestividadesManager.swift */,
 			);
 			path = "Proyecto (Festividades)";
 			sourceTree = "<group>";
@@ -171,10 +180,13 @@
 				BFFCAFFA25B2772300349AD0 /* FestividadesViewController.swift in Sources */,
 				BF6EF7E125B406E000D57AC5 /* CuentaViewController.swift in Sources */,
 				BFCF6E3225B41E270012E063 /* FavoritosViewController.swift in Sources */,
+				BFE550F625B502050080FB51 /* FestividadesData.swift in Sources */,
 				BF6EF7EA25B4145A00D57AC5 /* OpcionCollectionViewCell.swift in Sources */,
 				BFFCAFF625B2721300349AD0 /* FestividadTableViewCell.swift in Sources */,
 				BFCF6E2F25B41CF20012E063 /* ConfiguracionViewController.swift in Sources */,
 				BF91351E25AFC654000DD9C1 /* AppDelegate.swift in Sources */,
+				BFE550FC25B506130080FB51 /* FestividadesManager.swift in Sources */,
+				BFE550F925B503BC0080FB51 /* FestividadesModelo.swift in Sources */,
 				BF91352025AFC654000DD9C1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
