@@ -135,8 +135,74 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-a" translatesAutoresizingMaskIntoConstraints="NO" id="Tux-om-Y1J">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uce-1e-yfw">
+                                <rect key="frame" x="25" y="25" width="154" height="30"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Cbe-Hy-vlZ">
+                                        <rect key="frame" x="5" y="5" width="144" height="20"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9C-zf-DvJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="114" height="20"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <state key="normal" title="Búsqueda Avanzada"/>
+                                                <connections>
+                                                    <action selector="BusquedaAvanzada:" destination="M49-VV-ef9" eventType="touchUpInside" id="ixc-3C-t1d"/>
+                                                </connections>
+                                            </button>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="filter" translatesAutoresizingMaskIntoConstraints="NO" id="HFF-Vr-qib">
+                                                <rect key="frame" x="124" y="0.0" width="20" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="20" id="0ev-DA-YEW"/>
+                                                    <constraint firstAttribute="height" constant="20" id="XEh-cj-xuH"/>
+                                                </constraints>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Cbe-Hy-vlZ" secondAttribute="trailing" constant="5" id="Dwt-iE-G53"/>
+                                    <constraint firstItem="Cbe-Hy-vlZ" firstAttribute="leading" secondItem="Uce-1e-yfw" secondAttribute="leading" constant="5" id="L4O-oo-kKe"/>
+                                    <constraint firstItem="Cbe-Hy-vlZ" firstAttribute="top" secondItem="Uce-1e-yfw" secondAttribute="top" constant="5" id="VSM-Zj-K5v"/>
+                                    <constraint firstAttribute="bottom" secondItem="Cbe-Hy-vlZ" secondAttribute="bottom" constant="5" id="eRO-d2-bSJ"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D5T-np-uYR">
+                                <rect key="frame" x="205.5" y="25" width="183.5" height="30"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="utk-T4-bkO">
+                                        <rect key="frame" x="5" y="5" width="173.5" height="20"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Consultar lista de paises" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79h-Bw-BsE">
+                                                <rect key="frame" x="0.0" y="3" width="138.5" height="14.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tN2-NB-RYa">
+                                                <rect key="frame" x="153.5" y="0.0" width="20" height="20"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="20" id="0Bx-A6-xTq"/>
+                                                    <constraint firstAttribute="height" constant="20" id="GDM-sM-E1Q"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="info"/>
+                                                <connections>
+                                                    <action selector="ListaPaises:" destination="M49-VV-ef9" eventType="touchUpInside" id="NGx-C2-yMm"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="utk-T4-bkO" secondAttribute="bottom" constant="5" id="0gB-hv-BFE"/>
+                                    <constraint firstItem="utk-T4-bkO" firstAttribute="leading" secondItem="D5T-np-uYR" secondAttribute="leading" constant="5" id="IBh-iE-Uhg"/>
+                                    <constraint firstItem="utk-T4-bkO" firstAttribute="top" secondItem="D5T-np-uYR" secondAttribute="top" constant="5" id="RKO-9w-GeX"/>
+                                    <constraint firstAttribute="trailing" secondItem="utk-T4-bkO" secondAttribute="trailing" constant="5" id="oyO-Tq-QFm"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OqI-CS-mEB">
-                                <rect key="frame" x="25" y="40" width="364" height="65"/>
+                                <rect key="frame" x="25" y="65" width="364" height="65"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ekw-iG-c1n">
                                         <rect key="frame" x="10" y="10" width="344" height="45"/>
@@ -148,6 +214,9 @@
                                                     <constraint firstAttribute="width" constant="45" id="hkj-9b-TTb"/>
                                                 </constraints>
                                                 <state key="normal" title="Button" image="compass"/>
+                                                <connections>
+                                                    <action selector="Ubicacion:" destination="M49-VV-ef9" eventType="touchUpInside" id="9xz-zK-jZw"/>
+                                                </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Código País..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OoB-f3-pw8">
                                                 <rect key="frame" x="53" y="0.0" width="115" height="45"/>
@@ -190,7 +259,7 @@
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="oMw-V5-wY9">
-                                <rect key="frame" x="25" y="135" width="364" height="594"/>
+                                <rect key="frame" x="25" y="160" width="364" height="569"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celda" textLabel="cep-jx-lHR" style="IBUITableViewCellStyleDefault" id="ulx-Cc-zig">
@@ -217,16 +286,21 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Tux-om-Y1J" firstAttribute="top" secondItem="1WA-uQ-Jgl" secondAttribute="top" id="5BK-9s-KQQ"/>
+                            <constraint firstItem="Uce-1e-yfw" firstAttribute="top" secondItem="1WA-uQ-Jgl" secondAttribute="top" constant="25" id="7hW-T2-KnT"/>
                             <constraint firstItem="oMw-V5-wY9" firstAttribute="top" secondItem="OqI-CS-mEB" secondAttribute="bottom" constant="30" id="A6S-18-Kgu"/>
                             <constraint firstItem="Tux-om-Y1J" firstAttribute="leading" secondItem="1WA-uQ-Jgl" secondAttribute="leading" id="CPN-4E-TDb"/>
+                            <constraint firstItem="D5T-np-uYR" firstAttribute="top" secondItem="1WA-uQ-Jgl" secondAttribute="top" constant="25" id="Hwq-gA-ILj"/>
+                            <constraint firstItem="OqI-CS-mEB" firstAttribute="top" secondItem="D5T-np-uYR" secondAttribute="bottom" constant="10" id="PFG-Qk-bGx"/>
                             <constraint firstItem="1WA-uQ-Jgl" firstAttribute="trailing" secondItem="oMw-V5-wY9" secondAttribute="trailing" constant="25" id="WpW-SV-fXM"/>
                             <constraint firstItem="Tux-om-Y1J" firstAttribute="trailing" secondItem="1WA-uQ-Jgl" secondAttribute="trailing" id="Zek-SI-AUb"/>
                             <constraint firstItem="OqI-CS-mEB" firstAttribute="leading" secondItem="1WA-uQ-Jgl" secondAttribute="leading" constant="25" id="aRa-qc-dXH"/>
                             <constraint firstItem="oMw-V5-wY9" firstAttribute="leading" secondItem="1WA-uQ-Jgl" secondAttribute="leading" constant="25" id="btO-5q-ZOo"/>
+                            <constraint firstItem="OqI-CS-mEB" firstAttribute="top" secondItem="Uce-1e-yfw" secondAttribute="bottom" constant="10" id="c5A-WT-DXG"/>
                             <constraint firstItem="1WA-uQ-Jgl" firstAttribute="bottom" secondItem="oMw-V5-wY9" secondAttribute="bottom" constant="30" id="dTX-fs-omG"/>
                             <constraint firstAttribute="bottom" secondItem="Tux-om-Y1J" secondAttribute="bottom" id="foj-c1-B6p"/>
+                            <constraint firstItem="Uce-1e-yfw" firstAttribute="leading" secondItem="1WA-uQ-Jgl" secondAttribute="leading" constant="25" id="hYJ-5h-1Qb"/>
+                            <constraint firstItem="1WA-uQ-Jgl" firstAttribute="trailing" secondItem="D5T-np-uYR" secondAttribute="trailing" constant="25" id="mZv-Qs-7Jf"/>
                             <constraint firstItem="1WA-uQ-Jgl" firstAttribute="trailing" secondItem="OqI-CS-mEB" secondAttribute="trailing" constant="25" id="pWp-41-h8u"/>
-                            <constraint firstItem="OqI-CS-mEB" firstAttribute="top" secondItem="1WA-uQ-Jgl" secondAttribute="top" constant="40" id="uX6-80-moX"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Buscar" image="magnifyingglass" catalog="system" id="g0U-5U-onk"/>
@@ -234,8 +308,10 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="AñoField" destination="Auv-Cb-oWD" id="JBt-Ve-2vn"/>
+                        <outlet property="AvanzadaView" destination="Uce-1e-yfw" id="ek1-aK-lbT"/>
                         <outlet property="BuscarView" destination="OqI-CS-mEB" id="Ak4-ZB-KY1"/>
                         <outlet property="PaisField" destination="OoB-f3-pw8" id="dhv-ia-GvK"/>
+                        <outlet property="PaisesView" destination="D5T-np-uYR" id="mMP-dL-Hbg"/>
                         <outlet property="Tabla" destination="oMw-V5-wY9" id="2o0-UQ-3fa"/>
                     </connections>
                 </viewController>
@@ -474,7 +550,9 @@
         <image name="bg-y" width="750.5" height="416"/>
         <image name="calendar" width="512" height="512"/>
         <image name="compass" width="512" height="512"/>
+        <image name="filter" width="512" height="512"/>
         <image name="fireworks" width="313" height="223.5"/>
+        <image name="info" width="512" height="512"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">

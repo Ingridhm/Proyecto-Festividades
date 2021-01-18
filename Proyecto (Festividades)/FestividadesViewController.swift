@@ -8,21 +8,26 @@
 import Foundation
 import UIKit
 
-class FestividadesViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, FestividadesManagerDelegate {
+class FestividadesViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, FestividadesManagerDelegate, PaisesManagerDelegate {
     
     @IBOutlet weak var Tabla: UITableView!
     @IBOutlet weak var BuscarView: UIView!
     @IBOutlet weak var PaisField: UITextField!
     @IBOutlet weak var AñoField: UITextField!
+    @IBOutlet weak var PaisesView: UIView!
+    @IBOutlet weak var AvanzadaView: UIView!
     
     var festividadesmanager = FestividadesManager()
+    var paisesmanager = PaisesManager()
     var nombres = [""]
     var fechas = [""]
+    var paises = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         Estilos()
         festividadesmanager.delegado = self
+        paisesmanager.delegado = self
         Tabla.dataSource = self
         Tabla.delegate = self
         Tabla.register(UINib(nibName: "FestividadTableViewCell", bundle: nil), forCellReuseIdentifier: "celda")
@@ -47,12 +52,39 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
     
     func Estilos() {
         Tabla.backgroundColor = UIColor.clear
-        BuscarView.backgroundColor = UIColor.gray.withAlphaComponent(0.9)
+        BuscarView.backgroundColor = UIColor.white.withAlphaComponent(0.9)
         BuscarView.layer.cornerRadius = 10
+        PaisesView.backgroundColor = UIColor.white.withAlphaComponent(0.9)
+        PaisesView.layer.cornerRadius = 10
+        AvanzadaView.backgroundColor = UIColor.white.withAlphaComponent(0.9)
+        AvanzadaView.layer.cornerRadius = 10
+    }
+    
+    //MARK:- BÚSQUEDA AVANZADA (BUTTON)
+    @IBAction func BusquedaAvanzada(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Busqueda Avanzada", message: nil, preferredStyle: .alert)
+        let aceptar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+        let cancelar = UIAlertAction(title: "Cancelar", style: .default, handler: nil)
+        alert.addAction(aceptar)
+        alert.addAction(cancelar)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    //MARK:- LISTADO DE PAISES (BUTTON)
+    @IBAction func ListaPaises(_ sender: UIButton) {
+        if (!paises.isEmpty) {
+            paises.removeAll()
+        }
+        paisesmanager.ObtenerPaises()
     }
     
     
-    //MARK:- FIELD
+    //MARK:- UBICACIÓN (BUTTON)
+    @IBAction func Ubicacion(_ sender: UIButton) {
+        
+    }
+    
+    //MARK:- BUSCAR FESTIVIDADES (BUTTON)
     @IBAction func Buscar(_ sender: UIButton) {
         if (PaisField.text == "" || AñoField.text == "") {
             let alert = UIAlertController(title: "Campo en blanco", message: "Por favor llene todos los campos", preferredStyle: .alert)
@@ -91,7 +123,23 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
     //MARK:- API PAISES
     func Actualizar(pais: PaisesModelo) {
         DispatchQueue.main.async {
-            
+            for p in 0..<pais.nombre.count {
+                self.paises.append("\(pais.codigo[p]) - \(pais.nombre[p])")
+                print("\(pais.codigo[p]) - \(pais.nombre[p])")
+            }
+            let alert = UIAlertController(title: "Lista de Países", message: nil, preferredStyle: .alert)
+            let closure = { (action: UIAlertAction!) -> Void in
+                let index = alert.actions.firstIndex(of: action)
+                if index != nil {
+                    print("Index: \(index!)")
+                    self.PaisField.text = String(self.paises[index!].prefix(2))
+                }
+            }
+            for p in self.paises {
+                alert.addAction(UIAlertAction(title: p, style: .default, handler: closure))
+            }
+            alert.addAction(UIAlertAction(title: "CERRAR", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
         }
     }
     

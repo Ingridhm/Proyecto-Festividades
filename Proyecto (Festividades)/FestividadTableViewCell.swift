@@ -16,9 +16,7 @@ class FestividadTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         FestividadView.layer.cornerRadius = 10
-        FestividadView.backgroundColor = UIColor.darkGray.withAlphaComponent(0.9)
-        //CeldaView.layer.cornerRadius = 10
-        //CeldaView.backgroundColor = UIColor.gray.withAlphaComponent(0.8)
+        FestividadView.backgroundColor = UIColor.white.withAlphaComponent(0.9)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
