@@ -9,11 +9,10 @@ import Foundation
 
 struct FestividadesModelo {
     let status: Int
-    let nombre: String
-    let fecha: String
-    //let tipo: Bool
+    let nombre: [String]
+    let fecha: [String]
     
-    var error: String {
+    /*var error: String {
         switch status {
             case 200:
                 return "OK"
@@ -32,6 +31,6 @@ struct FestividadesModelo {
             default:
                 return "OK"
         }
-    }
+    }*/
     
 }

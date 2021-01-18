@@ -8,7 +8,8 @@
 import Foundation
 
 protocol FestividadesManagerDelegate {
-    
+    func Actualizar(festividad: FestividadesModelo)
+    func Error(error: Error)
 }
 
 struct FestividadesManager {
@@ -29,34 +30,35 @@ struct FestividadesManager {
     }
     
     func Handle(data: Data?, respuesta: URLResponse?, error: Error?) {
-        /*if (error != nil) {
-            //delegado?.Error(error: error!)
+        if (error != nil) {
+            delegado?.Error(error: error!)
             return
         }
         if let datos = data {
-            if let fest = self.Decodificar(fest: datos) {
-                //delegado?.Actualizar(fest: fest)
+            if let festividad = self.Decodificar(festividad: datos) {
+                delegado?.Actualizar(festividad: festividad)
             }
-        }*/
+        }
     }
     
-    /*func Decodificar(fest: Data) -> FestividadesModelo? {
+    func Decodificar(festividad: Data) -> FestividadesModelo? {
         let decoder = JSONDecoder()
+        var nombre = [String]()
+        var fecha = [String]()
         do {
-            let decoded = try decoder.decode(FestividadesData.self, from: fest)
+            let decoded = try decoder.decode(FestividadesData.self, from: festividad)
             let status = decoded.status
-            let nombre = decoded.holidays[0].name
-            let fecha = decoded.holidays[0].date
-            //let tipo = decoded.holidays[0].date
-            //let festividad = FestividadesModelo(status: status, nombre: nombre, fecha: fecha, tipo: tipo)
+            for f in decoded.holidays {
+                nombre.append(f.name)
+                fecha.append(f.date)
+            }
             let festividad = FestividadesModelo(status: status, nombre: nombre, fecha: fecha)
             return festividad
         }
         catch {
-            //print(error)
-            //delegado?.Error(error: error)
+            delegado?.Error(error:error)
             return nil
         }
-    }*/
+    }
     
 }

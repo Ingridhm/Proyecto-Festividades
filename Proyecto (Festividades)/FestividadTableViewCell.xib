@@ -87,6 +87,7 @@
             <connections>
                 <outlet property="Fecha" destination="28Y-7z-NGe" id="1C2-re-cJT"/>
                 <outlet property="FestividadView" destination="4yU-uj-9O7" id="xxC-ES-hXi"/>
+                <outlet property="Nombre" destination="STi-Dr-UAh" id="T65-8A-Zrc"/>
                 <outlet property="Tipo" destination="8j0-i6-zqv" id="ZNB-vd-UXP"/>
             </connections>
             <point key="canvasLocation" x="140.57971014492756" y="119.19642857142857"/>

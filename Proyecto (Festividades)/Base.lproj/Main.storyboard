@@ -229,7 +229,7 @@
                             <constraint firstItem="OqI-CS-mEB" firstAttribute="top" secondItem="1WA-uQ-Jgl" secondAttribute="top" constant="40" id="uX6-80-moX"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Buscar" id="g0U-5U-onk"/>
+                    <tabBarItem key="tabBarItem" title="Buscar" image="magnifyingglass" catalog="system" id="g0U-5U-onk"/>
                     <navigationItem key="navigationItem" id="B1N-Af-qCj"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -313,7 +313,7 @@
                             <constraint firstItem="hB1-Uf-qdJ" firstAttribute="trailing" secondItem="wqr-ns-Ad3" secondAttribute="trailing" constant="55" id="whN-YL-Zl2"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Cuenta" id="1x2-12-M84"/>
+                    <tabBarItem key="tabBarItem" title="Cuenta" image="person.circle.fill" catalog="system" id="1x2-12-M84"/>
                     <connections>
                         <outlet property="OpcionesGrid" destination="wqr-ns-Ad3" id="2wa-C1-4qJ"/>
                         <segue destination="hJB-SV-j7h" kind="show" identifier="configuracion" id="DUH-Gr-uER"/>
@@ -454,6 +454,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.2240558607" green="0.22627423560000001" blue="0.22627423560000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="M49-VV-ef9" kind="relationship" relationship="viewControllers" id="Hm9-aB-bYI"/>
@@ -473,6 +475,8 @@
         <image name="calendar" width="512" height="512"/>
         <image name="compass" width="512" height="512"/>
         <image name="fireworks" width="313" height="223.5"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
+        <image name="person.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -8,7 +8,7 @@
 import Foundation
 
 struct FestividadesData: Codable {
-    let status: String
+    let status: Int
     let holidays: [Holidays]
 }
 

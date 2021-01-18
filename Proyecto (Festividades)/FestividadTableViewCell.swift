@@ -9,6 +9,7 @@ import UIKit
 
 class FestividadTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var Nombre: UILabel!
     @IBOutlet weak var Fecha: UILabel!
     @IBOutlet weak var Tipo: UILabel!
     @IBOutlet weak var FestividadView: UIView!
