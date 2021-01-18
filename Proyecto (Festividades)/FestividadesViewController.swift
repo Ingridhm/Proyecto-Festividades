@@ -65,7 +65,7 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
         }
     }
     
-    //MARK:- API
+    //MARK:- API FESTIVIDADES
     func Actualizar(festividad: FestividadesModelo) {
         self.nombres.removeAll()
         self.fechas.removeAll()
@@ -82,6 +82,23 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
         print(error.localizedDescription)
         DispatchQueue.main.async {
             let alert = UIAlertController(title: "Error", message: "Por favor verifique que los datos introducidos sean correctos", preferredStyle: .alert)
+            let aceptar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+            alert.addAction(aceptar)
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    //MARK:- API PAISES
+    func Actualizar(pais: PaisesModelo) {
+        DispatchQueue.main.async {
+            
+        }
+    }
+    
+    func ErrorP(error: Error) {
+        print(error.localizedDescription)
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "Error", message: "Ocurrió un error al consultar la lista", preferredStyle: .alert)
             let aceptar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
             alert.addAction(aceptar)
             self.present(alert, animated: true, completion: nil)

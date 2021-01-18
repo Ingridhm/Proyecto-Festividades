@@ -22,6 +22,9 @@
 		BFE550F625B502050080FB51 /* FestividadesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE550F525B502050080FB51 /* FestividadesData.swift */; };
 		BFE550F925B503BC0080FB51 /* FestividadesModelo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE550F825B503BC0080FB51 /* FestividadesModelo.swift */; };
 		BFE550FC25B506130080FB51 /* FestividadesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE550FB25B506130080FB51 /* FestividadesManager.swift */; };
+		BFF7412825B626B3001C6E7B /* PaisesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF7412725B626B3001C6E7B /* PaisesData.swift */; };
+		BFF7412B25B626C8001C6E7B /* PaisesModelo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF7412A25B626C8001C6E7B /* PaisesModelo.swift */; };
+		BFF7412E25B626D9001C6E7B /* PaisesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF7412D25B626D9001C6E7B /* PaisesManager.swift */; };
 		BFFCAFF625B2721300349AD0 /* FestividadTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFCAFF425B2721300349AD0 /* FestividadTableViewCell.swift */; };
 		BFFCAFF725B2721300349AD0 /* FestividadTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFFCAFF525B2721300349AD0 /* FestividadTableViewCell.xib */; };
 		BFFCAFFA25B2772300349AD0 /* FestividadesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFCAFF925B2772300349AD0 /* FestividadesViewController.swift */; };
@@ -45,6 +48,9 @@
 		BFE550F525B502050080FB51 /* FestividadesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestividadesData.swift; sourceTree = "<group>"; };
 		BFE550F825B503BC0080FB51 /* FestividadesModelo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestividadesModelo.swift; sourceTree = "<group>"; };
 		BFE550FB25B506130080FB51 /* FestividadesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestividadesManager.swift; sourceTree = "<group>"; };
+		BFF7412725B626B3001C6E7B /* PaisesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaisesData.swift; sourceTree = "<group>"; };
+		BFF7412A25B626C8001C6E7B /* PaisesModelo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaisesModelo.swift; sourceTree = "<group>"; };
+		BFF7412D25B626D9001C6E7B /* PaisesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaisesManager.swift; sourceTree = "<group>"; };
 		BFFCAFF425B2721300349AD0 /* FestividadTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestividadTableViewCell.swift; sourceTree = "<group>"; };
 		BFFCAFF525B2721300349AD0 /* FestividadTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FestividadTableViewCell.xib; sourceTree = "<group>"; };
 		BFFCAFF925B2772300349AD0 /* FestividadesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestividadesViewController.swift; sourceTree = "<group>"; };
@@ -99,6 +105,9 @@
 				BFE550F525B502050080FB51 /* FestividadesData.swift */,
 				BFE550F825B503BC0080FB51 /* FestividadesModelo.swift */,
 				BFE550FB25B506130080FB51 /* FestividadesManager.swift */,
+				BFF7412725B626B3001C6E7B /* PaisesData.swift */,
+				BFF7412A25B626C8001C6E7B /* PaisesModelo.swift */,
+				BFF7412D25B626D9001C6E7B /* PaisesManager.swift */,
 			);
 			path = "Proyecto (Festividades)";
 			sourceTree = "<group>";
@@ -177,16 +186,19 @@
 			files = (
 				BF91352225AFC654000DD9C1 /* ViewController.swift in Sources */,
 				BF91352825AFC654000DD9C1 /* Proyecto__Festividades_.xcdatamodeld in Sources */,
+				BFF7412825B626B3001C6E7B /* PaisesData.swift in Sources */,
 				BFFCAFFA25B2772300349AD0 /* FestividadesViewController.swift in Sources */,
 				BF6EF7E125B406E000D57AC5 /* CuentaViewController.swift in Sources */,
 				BFCF6E3225B41E270012E063 /* FavoritosViewController.swift in Sources */,
 				BFE550F625B502050080FB51 /* FestividadesData.swift in Sources */,
+				BFF7412B25B626C8001C6E7B /* PaisesModelo.swift in Sources */,
 				BF6EF7EA25B4145A00D57AC5 /* OpcionCollectionViewCell.swift in Sources */,
 				BFFCAFF625B2721300349AD0 /* FestividadTableViewCell.swift in Sources */,
 				BFCF6E2F25B41CF20012E063 /* ConfiguracionViewController.swift in Sources */,
 				BF91351E25AFC654000DD9C1 /* AppDelegate.swift in Sources */,
 				BFE550FC25B506130080FB51 /* FestividadesManager.swift in Sources */,
 				BFE550F925B503BC0080FB51 /* FestividadesModelo.swift in Sources */,
+				BFF7412E25B626D9001C6E7B /* PaisesManager.swift in Sources */,
 				BF91352025AFC654000DD9C1 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

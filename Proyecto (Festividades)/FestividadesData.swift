@@ -15,5 +15,4 @@ struct FestividadesData: Codable {
 struct Holidays: Codable {
     let name: String
     let date: String
-    //let publi: Bool
 }
