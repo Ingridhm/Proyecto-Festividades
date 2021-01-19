@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import Firebase
+import MapKit
 
 class FestividadesViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, FestividadesManagerDelegate, PaisesManagerDelegate {
     
@@ -42,8 +43,11 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
         Tabla.dataSource = self
         Tabla.delegate = self
         diafield.delegate = self
+        Tabla.allowsSelection = true
+        Tabla.isUserInteractionEnabled = true
         Tabla.register(UINib(nibName: "FestividadTableViewCell", bundle: nil), forCellReuseIdentifier: "celda")
-        ref.observe(.value, with: { snapshot in
+        favref = self.ref.child("Favoritos-de-\(id_usuario)")
+        favref!.observe(.value, with: { snapshot in
             var newItems: [Favorito] = []
             for child in snapshot.children {
                 if let snapshot = child as? DataSnapshot, let fav = Favorito(snapshot: snapshot) {
@@ -51,8 +55,8 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
                 }
             }
             self.favoritos = newItems
+            self.Tabla.reloadData()
         })
-        favref = self.ref.child("Favoritos-de-\(id_usuario)")
     }
     
     func Estilos() {
@@ -86,12 +90,10 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
     
     //MARK:- FAVORITO
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if (imagenes[indexPath.row] == UIImage(systemName: "suit.heart")) {
-            imagenes[indexPath.row] = UIImage(systemName: "suit.heart.fill")!.withTintColor(UIColor.init(red: 155, green: 45, blue: 47, alpha: 1))
-        }
         let selectfest = nombres[indexPath.row]
         let selectfecha = fechas[indexPath.row]
         let fav = Favorito(nombre: selectfest, fecha: selectfecha, usuario: correo, favorito: true)
+        imagenes[indexPath.row] = UIImage(systemName: "suit.heart.fill")!.withTintColor(UIColor.init(red: 155, green: 45, blue: 47, alpha: 1))
         let favoritofestref = self.favref!.child(selectfest)
         favoritofestref.setValue(fav.toAnyObject())
         Tabla.reloadData()
@@ -158,12 +160,21 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
     func Actualizar(festividad: FestividadesModelo) {
         self.nombres.removeAll()
         self.fechas.removeAll()
-        DispatchQueue.main.async {
+        DispatchQueue.main.async { [self] in
             for t in 0..<festividad.nombre.count {
                 self.nombres.append(festividad.nombre[t])
                 self.fechas.append(festividad.fecha[t])
                 self.dias.append(festividad.dia[t])
                 self.imagenes.append(UIImage(systemName: "suit.heart")!)
+                for favorito in self.favoritos {
+                    if (favorito.nombre == festividad.nombre[t]) {
+                        if (favorito.favorito == true) {
+                            imagenes[t] = UIImage(systemName: "suit.heart.fill")!
+                            print("FAV: \(favorito.nombre) - \(festividad.nombre[t])")
+                        }
+                    }
+                }
+                //self.imagenes.append(UIImage(systemName: "suit.heart")!)
             }
             self.Tabla.reloadData()
         }

@@ -59,7 +59,7 @@ class FavoritosViewController: UIViewController, UITableViewDelegate, UITableVie
     //MARK:- ELIMINAR FAVORITO
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-          let favorito = favoritos[indexPath.row]
+            let favorito = favoritos[indexPath.row]
             favorito.ref?.removeValue()
         }
     }
