@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3C16DF4BFF2592F30AF50F89 /* Pods_Proyecto__Festividades_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A489FB5DD7695AAEFC2EBD3D /* Pods_Proyecto__Festividades_.framework */; };
+		BF58231A25B6AE8600CCF16A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF58231925B6AE8600CCF16A /* User.swift */; };
+		BF58231E25B6AEDB00CCF16A /* Favorito.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF58231D25B6AEDB00CCF16A /* Favorito.swift */; };
 		BF6EF7E125B406E000D57AC5 /* CuentaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6EF7E025B406E000D57AC5 /* CuentaViewController.swift */; };
 		BF6EF7EA25B4145A00D57AC5 /* OpcionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6EF7E825B4145A00D57AC5 /* OpcionCollectionViewCell.swift */; };
 		BF6EF7EB25B4145A00D57AC5 /* OpcionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF6EF7E925B4145A00D57AC5 /* OpcionCollectionViewCell.xib */; };
@@ -37,6 +39,8 @@
 		8302EDD63882FC030AB68635 /* Pods-Proyecto (Festividades).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Proyecto (Festividades).release.xcconfig"; path = "Target Support Files/Pods-Proyecto (Festividades)/Pods-Proyecto (Festividades).release.xcconfig"; sourceTree = "<group>"; };
 		A489FB5DD7695AAEFC2EBD3D /* Pods_Proyecto__Festividades_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Proyecto__Festividades_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF0ECCE925B6951900C5E4C9 /* Proyecto (Festividades)Release.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Proyecto (Festividades)Release.entitlements"; sourceTree = "<group>"; };
+		BF58231925B6AE8600CCF16A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BF58231D25B6AEDB00CCF16A /* Favorito.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorito.swift; sourceTree = "<group>"; };
 		BF6EF7E025B406E000D57AC5 /* CuentaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuentaViewController.swift; sourceTree = "<group>"; };
 		BF6EF7E825B4145A00D57AC5 /* OpcionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpcionCollectionViewCell.swift; sourceTree = "<group>"; };
 		BF6EF7E925B4145A00D57AC5 /* OpcionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OpcionCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -92,6 +96,15 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		BF58231825B6AE6F00CCF16A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BF58231925B6AE8600CCF16A /* User.swift */,
+				BF58231D25B6AEDB00CCF16A /* Favorito.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		BF91351125AFC654000DD9C1 = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +126,7 @@
 		BF91351C25AFC654000DD9C1 /* Proyecto (Festividades) */ = {
 			isa = PBXGroup;
 			children = (
+				BF58231825B6AE6F00CCF16A /* Models */,
 				BF0ECCE925B6951900C5E4C9 /* Proyecto (Festividades)Release.entitlements */,
 				BF91351D25AFC654000DD9C1 /* AppDelegate.swift */,
 				BF91351F25AFC654000DD9C1 /* SceneDelegate.swift */,
@@ -265,6 +279,7 @@
 				BF6EF7E125B406E000D57AC5 /* CuentaViewController.swift in Sources */,
 				BFCF6E3225B41E270012E063 /* FavoritosViewController.swift in Sources */,
 				BFE550F625B502050080FB51 /* FestividadesData.swift in Sources */,
+				BF58231A25B6AE8600CCF16A /* User.swift in Sources */,
 				BFF7412B25B626C8001C6E7B /* PaisesModelo.swift in Sources */,
 				BF6EF7EA25B4145A00D57AC5 /* OpcionCollectionViewCell.swift in Sources */,
 				BFFCAFF625B2721300349AD0 /* FestividadTableViewCell.swift in Sources */,
@@ -274,6 +289,7 @@
 				BFE550F925B503BC0080FB51 /* FestividadesModelo.swift in Sources */,
 				BFF7412E25B626D9001C6E7B /* PaisesManager.swift in Sources */,
 				BF91352025AFC654000DD9C1 /* SceneDelegate.swift in Sources */,
+				BF58231E25B6AEDB00CCF16A /* Favorito.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

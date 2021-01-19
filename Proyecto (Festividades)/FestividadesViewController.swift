@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Firebase
 
 class FestividadesViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, FestividadesManagerDelegate, PaisesManagerDelegate {
     
@@ -18,12 +19,19 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
     
     var festividadesmanager = FestividadesManager()
     var paisesmanager = PaisesManager()
-    var nombres = [""]
-    var fechas = [""]
+    var nombres = [String]()
+    var fechas = [String]()
+    var imagenes = [UIImage]()
     var paises = [String]()
     var paisfield = UITextField()
     var mesfield = UITextField()
     var diafield = UITextField()
+    var usuario: User!
+    var favoritos: [Favorito] = []
+    let correo = (Auth.auth().currentUser?.email)!
+    let id_usuario = (Auth.auth().currentUser?.uid)!
+    let ref = Database.database().reference(withPath: "favoritos")
+    var favref: DatabaseReference?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,23 +42,16 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
         Tabla.delegate = self
         diafield.delegate = self
         Tabla.register(UINib(nibName: "FestividadTableViewCell", bundle: nil), forCellReuseIdentifier: "celda")
-    }
-    
-    //NUMERO DE FILAS
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return nombres.count
-    }
-    
-    //INFO FILAS
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let celda = Tabla.dequeueReusableCell(withIdentifier: "celda") as! FestividadTableViewCell
-        celda.Nombre.text = nombres[indexPath.row]
-        celda.Fecha.text = fechas[indexPath.row]
-        return celda
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.backgroundColor = UIColor.clear
+        ref.observe(.value, with: { snapshot in
+            var newItems: [Favorito] = []
+            for child in snapshot.children {
+                if let snapshot = child as? DataSnapshot, let fav = Favorito(snapshot: snapshot) {
+                    newItems.append(fav)
+                }
+            }
+            self.favoritos = newItems
+        })
+        favref = self.ref.child("Favoritos-de-\(id_usuario)")
     }
     
     func Estilos() {
@@ -61,6 +62,37 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
         PaisesView.layer.cornerRadius = 10
         AvanzadaView.backgroundColor = UIColor.white.withAlphaComponent(0.9)
         AvanzadaView.layer.cornerRadius = 10
+    }
+    
+    //NUMERO DE FILAS
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return nombres.count
+    }
+    
+    //INFO FILAS
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let celda = Tabla.dequeueReusableCell(withIdentifier: "celda") as! FestividadTableViewCell
+        celda.Nombre.text = nombres[indexPath.row].capitalized(with: nil)
+        celda.Fecha.text = fechas[indexPath.row]
+        celda.FavoritoView.image = imagenes[indexPath.row]
+        return celda
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor = UIColor.clear
+    }
+    
+    //MARK:- FAVORITO
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if (imagenes[indexPath.row] == UIImage(systemName: "suit.heart")) {
+            imagenes[indexPath.row] = UIImage(systemName: "suit.heart.fill")!.withTintColor(UIColor.init(red: 155, green: 45, blue: 47, alpha: 1))
+        }
+        let selectfest = nombres[indexPath.row]
+        let selectfecha = fechas[indexPath.row]
+        let fav = Favorito(nombre: selectfest, fecha: selectfecha, usuario: correo, favorito: true)
+        let favoritofestref = self.favref!.child(selectfest)
+        favoritofestref.setValue(fav.toAnyObject())
+        Tabla.reloadData()
     }
     
     //MARK:- BÚSQUEDA AVANZADA (BUTTON)
@@ -128,6 +160,7 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
             for t in 0..<festividad.nombre.count {
                 self.nombres.append(festividad.nombre[t])
                 self.fechas.append(festividad.fecha[t])
+                self.imagenes.append(UIImage(systemName: "suit.heart")!)
             }
             self.Tabla.reloadData()
         }

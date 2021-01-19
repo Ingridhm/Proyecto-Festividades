@@ -44,7 +44,6 @@ class CuentaViewController: UIViewController, UICollectionViewDelegate, UICollec
             performSegue(withIdentifier: "favoritos", sender: nil)
         }
         else {
-            //let user = Auth.auth().currentUser!
             do {
                 try Auth.auth().signOut()
                 self.dismiss(animated: true, completion: nil)
@@ -52,19 +51,6 @@ class CuentaViewController: UIViewController, UICollectionViewDelegate, UICollec
             catch (let error) {
                 print("Error al cerrar sesión: \(error)")
             }
-            /*let onlineRef = Database.database().reference(withPath: "online/\(user.uid)")
-            onlineRef.removeValue { (error, _) in
-                if let error = error {
-                    print("Error: \(error)")
-                    return
-                }
-                do {
-                    try Auth.auth().signOut()
-                    self.dismiss(animated: true, completion: nil)
-                }
-                catch (let error) {
-                    print("Auth sign out failed: \(error)")
-                }*/
             performSegue(withIdentifier: "cerrar-sesion", sender: nil)
         }
     }

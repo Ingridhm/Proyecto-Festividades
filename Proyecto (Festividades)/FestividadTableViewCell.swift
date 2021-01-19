@@ -13,6 +13,7 @@ class FestividadTableViewCell: UITableViewCell {
     @IBOutlet weak var Fecha: UILabel!
     @IBOutlet weak var Tipo: UILabel!
     @IBOutlet weak var FestividadView: UIView!
+    @IBOutlet weak var FavoritoView: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         FestividadView.layer.cornerRadius = 10
