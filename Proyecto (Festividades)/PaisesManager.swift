@@ -9,7 +9,9 @@ import Foundation
 
 protocol PaisesManagerDelegate {
     func Actualizar(pais: PaisesModelo)
+    func ActualizarU(pais: PaisesModelo)
     func ErrorP(error: Error)
+    func ErrorU(error: Error)
 }
 
 struct PaisesManager {
@@ -24,6 +26,13 @@ struct PaisesManager {
         }
     }
     
+    func ObtenerPais() {
+        if let url = URL(string: url) {
+            let session = URLSession(configuration: .default)
+            let tarea = session.dataTask(with: url, completionHandler: HandleUbicacion(data:respuesta:error:))
+            tarea.resume()
+        }
+    }
     
     func Handle(data: Data?, respuesta: URLResponse?, error: Error?) {
         if (error != nil) {
@@ -33,6 +42,18 @@ struct PaisesManager {
         if let datos = data {
             if let pais = self.Decodificar(pais: datos) {
                 delegado?.Actualizar(pais: pais)
+            }
+        }
+    }
+    
+    func HandleUbicacion(data: Data?, respuesta: URLResponse?, error: Error?) {
+        if (error != nil) {
+            delegado?.ErrorU(error: error!)
+            return
+        }
+        if let datos = data {
+            if let pais = self.Decodificar(pais: datos) {
+                delegado?.ActualizarU(pais: pais)
             }
         }
     }
@@ -57,6 +78,5 @@ struct PaisesManager {
             return nil
         }
     }
-    
     
 }

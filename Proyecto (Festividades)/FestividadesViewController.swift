@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import MapKit
 
-class FestividadesViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, FestividadesManagerDelegate, PaisesManagerDelegate {
+class FestividadesViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate,CLLocationManagerDelegate, FestividadesManagerDelegate, PaisesManagerDelegate {
     
     @IBOutlet weak var Tabla: UITableView!
     @IBOutlet weak var BuscarView: UIView!
@@ -20,6 +20,7 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
     
     var festividadesmanager = FestividadesManager()
     var paisesmanager = PaisesManager()
+    var locationmanager = CLLocationManager()
     var nombres = [String]()
     var fechas = [String]()
     var dias = [String]()
@@ -34,6 +35,7 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
     let id_usuario = (Auth.auth().currentUser?.uid)!
     let ref = Database.database().reference(withPath: "favoritos")
     var favref: DatabaseReference?
+    var ubicacion = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +48,9 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
         Tabla.allowsSelection = true
         Tabla.isUserInteractionEnabled = true
         Tabla.register(UINib(nibName: "FestividadTableViewCell", bundle: nil), forCellReuseIdentifier: "celda")
+        locationmanager.delegate = self
+        locationmanager.requestWhenInUseAuthorization()
+        locationmanager.requestLocation()
         favref = self.ref.child("Favoritos-de-\(id_usuario)")
         favref!.observe(.value, with: { snapshot in
             var newItems: [Favorito] = []
@@ -104,6 +109,7 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
         let alert = UIAlertController(title: "Busqueda Avanzada", message: nil, preferredStyle: .alert)
         let aceptar = UIAlertAction(title: "Aceptar", style: .default) { (_) in
             self.festividadesmanager.ObtenerFestividadesAvanzada(pais: self.paisfield.text!, dia: self.diafield.text!, mes: self.mesfield.text!)
+            self.PaisField.text = self.paisfield.text
         }
         let cancelar = UIAlertAction(title: "Cancelar", style: .default, handler: nil)
         aceptar.isEnabled = false
@@ -140,7 +146,30 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
     
     //MARK:- UBICACIÓN (BUTTON)
     @IBAction func Ubicacion(_ sender: UIButton) {
-        
+        locationmanager.requestLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print("Se obtuvo la ubicación")
+        if let lugar = locations.last {
+            locationmanager.stopUpdatingLocation()
+            let latitud = lugar.coordinate.latitude
+            let longitud = lugar.coordinate.longitude
+            print("Latitud: \(latitud), Longitud: \(longitud)")
+            let location = CLLocation(latitude: latitud, longitude: longitud)
+            location.fetchCityAndCountry { (city, country, error) in
+                guard let country = country, error == nil else {
+                    return
+                }
+                print(country)
+                self.ubicacion = country
+                self.paisesmanager.ObtenerPais()
+            }
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error.localizedDescription)
     }
     
     //MARK:- BUSCAR FESTIVIDADES (BUTTON)
@@ -213,6 +242,18 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
         }
     }
     
+    func ActualizarU(pais: PaisesModelo) {
+        DispatchQueue.main.async {
+            for p in 0..<pais.nombre.count {
+                self.paises.append("\(pais.codigo[p]) - \(pais.nombre[p])")
+                if (pais.nombre[p].capitalized == self.ubicacion.capitalized) {
+                    print(pais.codigo[p])
+                    self.paisfield.text = pais.codigo[p]
+                }
+            }
+        }
+    }
+    
     func ErrorP(error: Error) {
         print(error.localizedDescription)
         DispatchQueue.main.async {
@@ -223,4 +264,20 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
         }
     }
     
+    func ErrorU(error: Error) {
+        print(error.localizedDescription)
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: "Error", message: "Ocurrió un error al encontrar su ubicación", preferredStyle: .alert)
+            let aceptar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+            alert.addAction(aceptar)
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+}
+
+//MARK:- UBICACIÓN Y NOMBRE PAIS
+extension CLLocation {
+    func fetchCityAndCountry(completion: @escaping (_ city: String?, _ country:  String?, _ error: Error?) -> ()) {
+        CLGeocoder().reverseGeocodeLocation(self) { completion($0?.first?.locality, $0?.first?.country, $1) }
+    }
 }
