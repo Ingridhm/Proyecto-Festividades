@@ -219,22 +219,10 @@
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Código País..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OoB-f3-pw8">
-                                                <rect key="frame" x="53" y="0.0" width="115" height="45"/>
+                                                <rect key="frame" x="53" y="0.0" width="238" height="45"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="115" id="iui-gT-dnj"/>
-                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Año.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Auv-Cb-oWD">
-                                                <rect key="frame" x="176" y="0.0" width="115" height="45"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="115" id="qfA-ma-A0C"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qbf-vw-OuC">
                                                 <rect key="frame" x="299" y="0.0" width="45" height="45"/>
@@ -307,7 +295,6 @@
                     <navigationItem key="navigationItem" id="B1N-Af-qCj"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="AñoField" destination="Auv-Cb-oWD" id="JBt-Ve-2vn"/>
                         <outlet property="AvanzadaView" destination="Uce-1e-yfw" id="ek1-aK-lbT"/>
                         <outlet property="BuscarView" destination="OqI-CS-mEB" id="Ak4-ZB-KY1"/>
                         <outlet property="PaisField" destination="OoB-f3-pw8" id="dhv-ia-GvK"/>

@@ -8,12 +8,11 @@
 import Foundation
 import UIKit
 
-class FestividadesViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, FestividadesManagerDelegate, PaisesManagerDelegate {
+class FestividadesViewController : UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, FestividadesManagerDelegate, PaisesManagerDelegate {
     
     @IBOutlet weak var Tabla: UITableView!
     @IBOutlet weak var BuscarView: UIView!
     @IBOutlet weak var PaisField: UITextField!
-    @IBOutlet weak var AñoField: UITextField!
     @IBOutlet weak var PaisesView: UIView!
     @IBOutlet weak var AvanzadaView: UIView!
     
@@ -22,6 +21,9 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
     var nombres = [""]
     var fechas = [""]
     var paises = [String]()
+    var paisfield = UITextField()
+    var mesfield = UITextField()
+    var diafield = UITextField()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +32,7 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
         paisesmanager.delegado = self
         Tabla.dataSource = self
         Tabla.delegate = self
+        diafield.delegate = self
         Tabla.register(UINib(nibName: "FestividadTableViewCell", bundle: nil), forCellReuseIdentifier: "celda")
     }
     
@@ -63,10 +66,30 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
     //MARK:- BÚSQUEDA AVANZADA (BUTTON)
     @IBAction func BusquedaAvanzada(_ sender: UIButton) {
         let alert = UIAlertController(title: "Busqueda Avanzada", message: nil, preferredStyle: .alert)
-        let aceptar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+        let aceptar = UIAlertAction(title: "Aceptar", style: .default) { (_) in
+            self.festividadesmanager.ObtenerFestividadesAvanzada(pais: self.paisfield.text!, dia: self.diafield.text!, mes: self.mesfield.text!)
+        }
         let cancelar = UIAlertAction(title: "Cancelar", style: .default, handler: nil)
+        aceptar.isEnabled = false
         alert.addAction(aceptar)
         alert.addAction(cancelar)
+        alert.addTextField { (alertpais) in
+            alertpais.placeholder = "Código del País"
+            self.paisfield = alertpais
+            NotificationCenter.default.addObserver(forName: UITextField.textDidChangeNotification, object: alertpais, queue: OperationQueue.main, using: { (_) in
+                let textCount = alertpais.text?.trimmingCharacters(in: .whitespacesAndNewlines).count ?? 0
+                let textIsNotEmpty = textCount > 0
+                aceptar.isEnabled = textIsNotEmpty
+            })
+        }
+        alert.addTextField { (alertmes) in
+            alertmes.placeholder = "Mes"
+            self.mesfield = alertmes
+        }
+        alert.addTextField { (alertdia) in
+            alertdia.placeholder = "Día"
+            self.diafield = alertdia
+        }
         self.present(alert, animated: true, completion: nil)
     }
     
@@ -86,14 +109,14 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
     
     //MARK:- BUSCAR FESTIVIDADES (BUTTON)
     @IBAction func Buscar(_ sender: UIButton) {
-        if (PaisField.text == "" || AñoField.text == "") {
+        if (PaisField.text == "") {
             let alert = UIAlertController(title: "Campo en blanco", message: "Por favor llene todos los campos", preferredStyle: .alert)
             let aceptar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
             alert.addAction(aceptar)
             present(alert, animated: true, completion: nil)
         }
         else {
-            festividadesmanager.ObtenerFestividades(pais: PaisField.text!, año: AñoField.text!)
+            festividadesmanager.ObtenerFestividades(pais: PaisField.text!)
         }
     }
     

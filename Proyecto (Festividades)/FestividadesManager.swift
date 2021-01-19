@@ -14,10 +14,21 @@ protocol FestividadesManagerDelegate {
 
 struct FestividadesManager {
     var delegado: FestividadesManagerDelegate?
-    let url = "https://holidayapi.com/v1/holidays?pretty&key=b4c0487e-b86f-4720-bbc9-11fffaa6f500"
+    let url = "https://holidayapi.com/v1/holidays?pretty&key=b4c0487e-b86f-4720-bbc9-11fffaa6f500&language=es"
     
-    func ObtenerFestividades(pais: String, año: String) {
-        let urls = "\(url)&country=\(pais)&year=\(año)"
+    func ObtenerFestividades(pais: String) {
+        let urls = "\(url)&country=\(pais)&year=2020"
+        Solicitar(urls: urls)
+    }
+    
+    func ObtenerFestividadesAvanzada(pais: String, dia: String, mes: String) {
+        var urls = "\(url)&country=\(pais)&year=2020"
+        if (mes != "" ) {
+            urls = "\(urls)&month=\(mes)"
+        }
+        if (dia != "" ) {
+            urls = "\(urls)&day=\(dia)"
+        }
         Solicitar(urls: urls)
     }
     
