@@ -15,4 +15,14 @@ struct FestividadesData: Codable {
 struct Holidays: Codable {
     let name: String
     let date: String
+    let weekday: Weekday
 }
+
+struct Weekday: Codable {
+    let date: Day
+}
+
+struct Day: Codable {
+    let name: String
+}
+

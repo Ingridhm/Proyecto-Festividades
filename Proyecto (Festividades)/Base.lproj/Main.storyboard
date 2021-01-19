@@ -323,17 +323,38 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.84999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg-b" translatesAutoresizingMaskIntoConstraints="NO" id="j1d-fT-NhZ">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="h6R-4b-6u1">
+                                <rect key="frame" x="25" y="78" width="364" height="687"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="celdafav" id="kH1-rX-rpX">
+                                        <rect key="frame" x="0.0" y="28" width="364" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kH1-rX-rpX" id="Ox5-EV-zAF">
+                                            <rect key="frame" x="0.0" y="0.0" width="364" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8tH-Wa-Wrj"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="h6R-4b-6u1" firstAttribute="top" secondItem="8tH-Wa-Wrj" secondAttribute="top" constant="78" id="1Am-lG-zHR"/>
                             <constraint firstItem="j1d-fT-NhZ" firstAttribute="leading" secondItem="8tH-Wa-Wrj" secondAttribute="leading" id="C46-LH-Ni0"/>
+                            <constraint firstItem="h6R-4b-6u1" firstAttribute="leading" secondItem="8tH-Wa-Wrj" secondAttribute="leading" constant="25" id="Cq0-9l-t4y"/>
                             <constraint firstItem="j1d-fT-NhZ" firstAttribute="top" secondItem="8tH-Wa-Wrj" secondAttribute="top" id="KWt-nr-uc7"/>
                             <constraint firstItem="j1d-fT-NhZ" firstAttribute="trailing" secondItem="8tH-Wa-Wrj" secondAttribute="trailing" id="NE9-Hb-YEs"/>
                             <constraint firstAttribute="bottom" secondItem="j1d-fT-NhZ" secondAttribute="bottom" id="T3c-FV-Qfd"/>
+                            <constraint firstItem="8tH-Wa-Wrj" firstAttribute="trailing" secondItem="h6R-4b-6u1" secondAttribute="trailing" constant="25" id="URv-hF-pP6"/>
+                            <constraint firstItem="8tH-Wa-Wrj" firstAttribute="bottom" secondItem="h6R-4b-6u1" secondAttribute="bottom" constant="43" id="kVw-Fn-gID"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="D1s-XN-FCE"/>
+                    <connections>
+                        <outlet property="Tabla" destination="h6R-4b-6u1" id="six-ql-QVe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cir-xi-wRT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

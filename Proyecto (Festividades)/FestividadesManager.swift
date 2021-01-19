@@ -56,14 +56,16 @@ struct FestividadesManager {
         let decoder = JSONDecoder()
         var nombre = [String]()
         var fecha = [String]()
+        var dia = [String]()
         do {
             let decoded = try decoder.decode(FestividadesData.self, from: festividad)
             let status = decoded.status
             for f in decoded.holidays {
                 nombre.append(f.name)
                 fecha.append(f.date)
+                dia.append(f.weekday.date.name)
             }
-            let festividad = FestividadesModelo(status: status, nombre: nombre, fecha: fecha)
+            let festividad = FestividadesModelo(status: status, nombre: nombre, fecha: fecha, dia: dia)
             return festividad
         }
         catch {

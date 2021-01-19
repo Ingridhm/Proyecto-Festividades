@@ -10,6 +10,8 @@
 		3C16DF4BFF2592F30AF50F89 /* Pods_Proyecto__Festividades_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A489FB5DD7695AAEFC2EBD3D /* Pods_Proyecto__Festividades_.framework */; };
 		BF58231A25B6AE8600CCF16A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF58231925B6AE8600CCF16A /* User.swift */; };
 		BF58231E25B6AEDB00CCF16A /* Favorito.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF58231D25B6AEDB00CCF16A /* Favorito.swift */; };
+		BF58233425B6D20600CCF16A /* FavoritoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF58233225B6D20600CCF16A /* FavoritoTableViewCell.swift */; };
+		BF58233525B6D20600CCF16A /* FavoritoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF58233325B6D20600CCF16A /* FavoritoTableViewCell.xib */; };
 		BF6EF7E125B406E000D57AC5 /* CuentaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6EF7E025B406E000D57AC5 /* CuentaViewController.swift */; };
 		BF6EF7EA25B4145A00D57AC5 /* OpcionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6EF7E825B4145A00D57AC5 /* OpcionCollectionViewCell.swift */; };
 		BF6EF7EB25B4145A00D57AC5 /* OpcionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF6EF7E925B4145A00D57AC5 /* OpcionCollectionViewCell.xib */; };
@@ -41,6 +43,8 @@
 		BF0ECCE925B6951900C5E4C9 /* Proyecto (Festividades)Release.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Proyecto (Festividades)Release.entitlements"; sourceTree = "<group>"; };
 		BF58231925B6AE8600CCF16A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		BF58231D25B6AEDB00CCF16A /* Favorito.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorito.swift; sourceTree = "<group>"; };
+		BF58233225B6D20600CCF16A /* FavoritoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritoTableViewCell.swift; sourceTree = "<group>"; };
+		BF58233325B6D20600CCF16A /* FavoritoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoritoTableViewCell.xib; sourceTree = "<group>"; };
 		BF6EF7E025B406E000D57AC5 /* CuentaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuentaViewController.swift; sourceTree = "<group>"; };
 		BF6EF7E825B4145A00D57AC5 /* OpcionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpcionCollectionViewCell.swift; sourceTree = "<group>"; };
 		BF6EF7E925B4145A00D57AC5 /* OpcionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OpcionCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -151,6 +155,8 @@
 				BFF7412A25B626C8001C6E7B /* PaisesModelo.swift */,
 				BFF7412D25B626D9001C6E7B /* PaisesManager.swift */,
 				BFD2FACA25B6869E00BC6638 /* GoogleService-Info.plist */,
+				BF58233225B6D20600CCF16A /* FavoritoTableViewCell.swift */,
+				BF58233325B6D20600CCF16A /* FavoritoTableViewCell.xib */,
 			);
 			path = "Proyecto (Festividades)";
 			sourceTree = "<group>";
@@ -220,6 +226,7 @@
 				BFFCAFF725B2721300349AD0 /* FestividadTableViewCell.xib in Resources */,
 				BF91352525AFC654000DD9C1 /* Main.storyboard in Resources */,
 				BF6EF7EB25B4145A00D57AC5 /* OpcionCollectionViewCell.xib in Resources */,
+				BF58233525B6D20600CCF16A /* FavoritoTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +287,7 @@
 				BFCF6E3225B41E270012E063 /* FavoritosViewController.swift in Sources */,
 				BFE550F625B502050080FB51 /* FestividadesData.swift in Sources */,
 				BF58231A25B6AE8600CCF16A /* User.swift in Sources */,
+				BF58233425B6D20600CCF16A /* FavoritoTableViewCell.swift in Sources */,
 				BFF7412B25B626C8001C6E7B /* PaisesModelo.swift in Sources */,
 				BF6EF7EA25B4145A00D57AC5 /* OpcionCollectionViewCell.swift in Sources */,
 				BFFCAFF625B2721300349AD0 /* FestividadTableViewCell.swift in Sources */,

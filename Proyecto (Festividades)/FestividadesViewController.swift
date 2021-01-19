@@ -21,6 +21,7 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
     var paisesmanager = PaisesManager()
     var nombres = [String]()
     var fechas = [String]()
+    var dias = [String]()
     var imagenes = [UIImage]()
     var paises = [String]()
     var paisfield = UITextField()
@@ -74,6 +75,7 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
         let celda = Tabla.dequeueReusableCell(withIdentifier: "celda") as! FestividadTableViewCell
         celda.Nombre.text = nombres[indexPath.row].capitalized(with: nil)
         celda.Fecha.text = fechas[indexPath.row]
+        celda.Tipo.text = dias[indexPath.row]
         celda.FavoritoView.image = imagenes[indexPath.row]
         return celda
     }
@@ -160,6 +162,7 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
             for t in 0..<festividad.nombre.count {
                 self.nombres.append(festividad.nombre[t])
                 self.fechas.append(festividad.fecha[t])
+                self.dias.append(festividad.dia[t])
                 self.imagenes.append(UIImage(systemName: "suit.heart")!)
             }
             self.Tabla.reloadData()

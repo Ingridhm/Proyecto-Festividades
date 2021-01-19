@@ -11,6 +11,7 @@ struct FestividadesModelo {
     let status: Int
     let nombre: [String]
     let fecha: [String]
+    let dia: [String]
     
     /*var error: String {
         switch status {
