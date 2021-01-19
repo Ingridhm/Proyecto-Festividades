@@ -1,0 +1,6 @@
+framework module Pods_Proyecto__Festividades_ {
+  umbrella header "Pods-Proyecto (Festividades)-umbrella.h"
+
+  export *
+  module * { export * }
+}

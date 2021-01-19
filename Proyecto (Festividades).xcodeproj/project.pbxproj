@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C16DF4BFF2592F30AF50F89 /* Pods_Proyecto__Festividades_.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A489FB5DD7695AAEFC2EBD3D /* Pods_Proyecto__Festividades_.framework */; };
 		BF6EF7E125B406E000D57AC5 /* CuentaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6EF7E025B406E000D57AC5 /* CuentaViewController.swift */; };
 		BF6EF7EA25B4145A00D57AC5 /* OpcionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6EF7E825B4145A00D57AC5 /* OpcionCollectionViewCell.swift */; };
 		BF6EF7EB25B4145A00D57AC5 /* OpcionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF6EF7E925B4145A00D57AC5 /* OpcionCollectionViewCell.xib */; };
@@ -19,6 +20,7 @@
 		BF91352D25AFC655000DD9C1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF91352B25AFC655000DD9C1 /* LaunchScreen.storyboard */; };
 		BFCF6E2F25B41CF20012E063 /* ConfiguracionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF6E2E25B41CF20012E063 /* ConfiguracionViewController.swift */; };
 		BFCF6E3225B41E270012E063 /* FavoritosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFCF6E3125B41E270012E063 /* FavoritosViewController.swift */; };
+		BFD2FACB25B6869E00BC6638 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFD2FACA25B6869E00BC6638 /* GoogleService-Info.plist */; };
 		BFE550F625B502050080FB51 /* FestividadesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE550F525B502050080FB51 /* FestividadesData.swift */; };
 		BFE550F925B503BC0080FB51 /* FestividadesModelo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE550F825B503BC0080FB51 /* FestividadesModelo.swift */; };
 		BFE550FC25B506130080FB51 /* FestividadesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE550FB25B506130080FB51 /* FestividadesManager.swift */; };
@@ -31,6 +33,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48A1B707D74FD81D211A723F /* Pods-Proyecto (Festividades).debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Proyecto (Festividades).debug.xcconfig"; path = "Target Support Files/Pods-Proyecto (Festividades)/Pods-Proyecto (Festividades).debug.xcconfig"; sourceTree = "<group>"; };
+		8302EDD63882FC030AB68635 /* Pods-Proyecto (Festividades).release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Proyecto (Festividades).release.xcconfig"; path = "Target Support Files/Pods-Proyecto (Festividades)/Pods-Proyecto (Festividades).release.xcconfig"; sourceTree = "<group>"; };
+		A489FB5DD7695AAEFC2EBD3D /* Pods_Proyecto__Festividades_.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Proyecto__Festividades_.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF0ECCE925B6951900C5E4C9 /* Proyecto (Festividades)Release.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Proyecto (Festividades)Release.entitlements"; sourceTree = "<group>"; };
 		BF6EF7E025B406E000D57AC5 /* CuentaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuentaViewController.swift; sourceTree = "<group>"; };
 		BF6EF7E825B4145A00D57AC5 /* OpcionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpcionCollectionViewCell.swift; sourceTree = "<group>"; };
 		BF6EF7E925B4145A00D57AC5 /* OpcionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OpcionCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -45,6 +51,7 @@
 		BF91352E25AFC655000DD9C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BFCF6E2E25B41CF20012E063 /* ConfiguracionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfiguracionViewController.swift; sourceTree = "<group>"; };
 		BFCF6E3125B41E270012E063 /* FavoritosViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritosViewController.swift; sourceTree = "<group>"; };
+		BFD2FACA25B6869E00BC6638 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BFE550F525B502050080FB51 /* FestividadesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestividadesData.swift; sourceTree = "<group>"; };
 		BFE550F825B503BC0080FB51 /* FestividadesModelo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestividadesModelo.swift; sourceTree = "<group>"; };
 		BFE550FB25B506130080FB51 /* FestividadesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FestividadesManager.swift; sourceTree = "<group>"; };
@@ -61,17 +68,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C16DF4BFF2592F30AF50F89 /* Pods_Proyecto__Festividades_.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4A2C89222831D6B5CEFB2CFE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A489FB5DD7695AAEFC2EBD3D /* Pods_Proyecto__Festividades_.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		804B8D60F58303943D55EC76 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				48A1B707D74FD81D211A723F /* Pods-Proyecto (Festividades).debug.xcconfig */,
+				8302EDD63882FC030AB68635 /* Pods-Proyecto (Festividades).release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		BF91351125AFC654000DD9C1 = {
 			isa = PBXGroup;
 			children = (
 				BF91351C25AFC654000DD9C1 /* Proyecto (Festividades) */,
 				BF91351B25AFC654000DD9C1 /* Products */,
+				804B8D60F58303943D55EC76 /* Pods */,
+				4A2C89222831D6B5CEFB2CFE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,6 +113,7 @@
 		BF91351C25AFC654000DD9C1 /* Proyecto (Festividades) */ = {
 			isa = PBXGroup;
 			children = (
+				BF0ECCE925B6951900C5E4C9 /* Proyecto (Festividades)Release.entitlements */,
 				BF91351D25AFC654000DD9C1 /* AppDelegate.swift */,
 				BF91351F25AFC654000DD9C1 /* SceneDelegate.swift */,
 				BF91352125AFC654000DD9C1 /* ViewController.swift */,
@@ -108,6 +136,7 @@
 				BFF7412725B626B3001C6E7B /* PaisesData.swift */,
 				BFF7412A25B626C8001C6E7B /* PaisesModelo.swift */,
 				BFF7412D25B626D9001C6E7B /* PaisesManager.swift */,
+				BFD2FACA25B6869E00BC6638 /* GoogleService-Info.plist */,
 			);
 			path = "Proyecto (Festividades)";
 			sourceTree = "<group>";
@@ -119,9 +148,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BF91353125AFC655000DD9C1 /* Build configuration list for PBXNativeTarget "Proyecto (Festividades)" */;
 			buildPhases = (
+				EF1288B873D12C8B9A4B1400 /* [CP] Check Pods Manifest.lock */,
 				BF91351625AFC654000DD9C1 /* Sources */,
 				BF91351725AFC654000DD9C1 /* Frameworks */,
 				BF91351825AFC654000DD9C1 /* Resources */,
+				61543628C9AD9091B0F8167D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -171,6 +202,7 @@
 			files = (
 				BF91352D25AFC655000DD9C1 /* LaunchScreen.storyboard in Resources */,
 				BF91352A25AFC655000DD9C1 /* Assets.xcassets in Resources */,
+				BFD2FACB25B6869E00BC6638 /* GoogleService-Info.plist in Resources */,
 				BFFCAFF725B2721300349AD0 /* FestividadTableViewCell.xib in Resources */,
 				BF91352525AFC654000DD9C1 /* Main.storyboard in Resources */,
 				BF6EF7EB25B4145A00D57AC5 /* OpcionCollectionViewCell.xib in Resources */,
@@ -178,6 +210,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		61543628C9AD9091B0F8167D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Proyecto (Festividades)/Pods-Proyecto (Festividades)-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Proyecto (Festividades)/Pods-Proyecto (Festividades)-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Proyecto (Festividades)/Pods-Proyecto (Festividades)-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF1288B873D12C8B9A4B1400 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Proyecto (Festividades)-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BF91351625AFC654000DD9C1 /* Sources */ = {
@@ -343,6 +417,7 @@
 		};
 		BF91353225AFC655000DD9C1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48A1B707D74FD81D211A723F /* Pods-Proyecto (Festividades).debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -362,9 +437,11 @@
 		};
 		BF91353325AFC655000DD9C1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8302EDD63882FC030AB68635 /* Pods-Proyecto (Festividades).release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Proyecto (Festividades)/Proyecto (Festividades)Release.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Proyecto (Festividades)/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;

@@ -76,7 +76,7 @@
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Iniciar Sesión"/>
                                                         <connections>
-                                                            <segue destination="kDg-5E-Vl7" kind="show" id="9T6-wz-HbA"/>
+                                                            <action selector="Login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tIc-Un-pxq"/>
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="adl-qz-iNw">
@@ -85,6 +85,9 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Registarse"/>
+                                                        <connections>
+                                                            <action selector="Registrar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Z0-gy-6EX"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -118,6 +121,9 @@
                     <navigationItem key="navigationItem" id="LFX-3K-GOJ"/>
                     <connections>
                         <outlet property="BienvenidoView" destination="QOp-rj-CcY" id="LBB-VT-LNE"/>
+                        <outlet property="CorreoField" destination="KMf-jM-bwT" id="wPq-bR-ERJ"/>
+                        <outlet property="PassField" destination="wFR-93-RBK" id="Ai4-qw-fLf"/>
+                        <segue destination="kDg-5E-Vl7" kind="show" identifier="Inicio" id="kiz-VC-BqC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
