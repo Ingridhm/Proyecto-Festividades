@@ -36,6 +36,8 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
     let ref = Database.database().reference(withPath: "favoritos")
     var favref: DatabaseReference?
     var ubicacion = ""
+    let defaults = UserDefaults.standard
+    var busqueda = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +52,6 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
         Tabla.register(UINib(nibName: "FestividadTableViewCell", bundle: nil), forCellReuseIdentifier: "celda")
         locationmanager.delegate = self
         locationmanager.requestWhenInUseAuthorization()
-        locationmanager.requestLocation()
         favref = self.ref.child("Favoritos-de-\(id_usuario)")
         favref!.observe(.value, with: { snapshot in
             var newItems: [Favorito] = []
@@ -62,7 +63,13 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
             self.favoritos = newItems
             self.Tabla.reloadData()
         })
-        locationmanager.requestLocation()
+        if let guardado = defaults.string(forKey: "Busqueda") {
+            busqueda = guardado
+            PaisField.text = busqueda.uppercased()
+            festividadesmanager.ObtenerFestividades(pais: PaisField.text!)
+        }
+        print("Busqueda: \(busqueda)")
+        //locationmanager.requestLocation()
     }
     
     func Estilos() {
@@ -73,6 +80,11 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
         PaisesView.layer.cornerRadius = 10
         AvanzadaView.backgroundColor = UIColor.white.withAlphaComponent(0.9)
         AvanzadaView.layer.cornerRadius = 10
+    }
+    
+    //MARK:- GUARDAR ULTIMA BÚSQUEDA
+    func Guardar() {
+        self.defaults.set(self.PaisField.text, forKey: "Busqueda")
     }
     
     //NUMERO DE FILAS
@@ -111,6 +123,7 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
         let aceptar = UIAlertAction(title: "Aceptar", style: .default) { (_) in
             self.festividadesmanager.ObtenerFestividadesAvanzada(pais: self.paisfield.text!, dia: self.diafield.text!, mes: self.mesfield.text!)
             self.PaisField.text = self.paisfield.text
+            //self.Guardar()
         }
         let cancelar = UIAlertAction(title: "Cancelar", style: .default, handler: nil)
         aceptar.isEnabled = false
@@ -206,12 +219,13 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
                 for favorito in self.favoritos {
                     if (favorito.nombre == festividad.nombre[t]) {
                         imagenes[t] = UIImage(systemName: "suit.heart.fill")!
-                        print("FAV: \(favorito.nombre) - \(festividad.nombre[t])")
+                        //print("FAV: \(favorito.nombre) - \(festividad.nombre[t])")
                     }
                 }
-                print("\(nombres[t]) - \(imagenes[t])")
+                //print("\(nombres[t]) - \(imagenes[t])")
             }
             self.Tabla.reloadData()
+            Guardar()
         }
     }
     
@@ -238,6 +252,7 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
                 if index != nil {
                     print("Index: \(index!)")
                     self.PaisField.text = String(self.paises[index!].prefix(2))
+                    self.festividadesmanager.ObtenerFestividades(pais: self.PaisField.text!)
                 }
             }
             for p in self.paises {
