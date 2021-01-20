@@ -12,6 +12,7 @@ import Firebase
 class CuentaViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     
     @IBOutlet weak var OpcionesGrid: UICollectionView!
+    @IBOutlet weak var OpcionesView: UIView!
     
     let opciones = ["Configuración", "Favoritos", "Cerrar Sesión"]
     let images = [UIImage(named: "settings.svg"), UIImage(named: "favourites.svg"), UIImage(named: "logout.svg")]
@@ -19,10 +20,16 @@ class CuentaViewController: UIViewController, UICollectionViewDelegate, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Estilos()
         OpcionesGrid.delegate = self
         OpcionesGrid.dataSource = self
-        OpcionesGrid.backgroundColor = UIColor.clear
         OpcionesGrid.register(UINib(nibName: "OpcionCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "opcion")
+    }
+    
+    func Estilos() {
+        OpcionesGrid.backgroundColor = UIColor.clear
+        OpcionesView.backgroundColor = UIColor.white.withAlphaComponent(0.9)
+        OpcionesView.layer.cornerRadius = 10
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

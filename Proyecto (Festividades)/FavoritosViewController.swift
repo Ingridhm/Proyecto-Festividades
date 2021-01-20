@@ -12,6 +12,7 @@ import Firebase
 class FavoritosViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var Tabla: UITableView!
+    @IBOutlet weak var FavoritasView: UIView!
     
     var favoritos: [Favorito] = []
     let id_usuario = (Auth.auth().currentUser?.uid)!
@@ -20,10 +21,10 @@ class FavoritosViewController: UIViewController, UITableViewDelegate, UITableVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Estilos()
         Tabla.dataSource = self
         Tabla.delegate = self
         Tabla.register(UINib(nibName: "FavoritoTableViewCell", bundle: nil), forCellReuseIdentifier: "celdafav")
-        Tabla.backgroundColor = UIColor.clear
         favref = self.ref.child("Favoritos-de-\(id_usuario)")
         favref!.observe(.value, with: { (snapshot) in
             var newItems: [Favorito] = []
@@ -36,6 +37,12 @@ class FavoritosViewController: UIViewController, UITableViewDelegate, UITableVie
             self.favoritos = newItems
             self.Tabla.reloadData()
         })
+    }
+    
+    func Estilos() {
+        Tabla.backgroundColor = UIColor.clear
+        FavoritasView.backgroundColor = UIColor.white.withAlphaComponent(0.9)
+        FavoritasView.layer.cornerRadius = 10
     }
     
     //NUMERO DE FILAS

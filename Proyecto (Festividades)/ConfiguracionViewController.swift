@@ -14,6 +14,7 @@ class ConfiguracionViewController: UIViewController {
     @IBOutlet weak var ConfiguracionView: UIView!
     @IBOutlet weak var CorreoField: UITextField!
     @IBOutlet weak var NuevaField: UITextField!
+    @IBOutlet weak var CambioView: UIView!
     
     let ref = Database.database().reference(withPath: "favoritos")
     var favref: DatabaseReference?
@@ -21,9 +22,15 @@ class ConfiguracionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Estilos()
+        favref = self.ref.child("Favoritos-de-\(id_usuario)")
+    }
+    
+    func Estilos() {
         ConfiguracionView.backgroundColor = UIColor.white.withAlphaComponent(0.8)
         ConfiguracionView.layer.cornerRadius = 10
-        favref = self.ref.child("Favoritos-de-\(id_usuario)")
+        CambioView.backgroundColor = UIColor.white.withAlphaComponent(0.8)
+        CambioView.layer.cornerRadius = 10
     }
     
     @IBAction func GuardarConfiguracion(_ sender: Any) {
