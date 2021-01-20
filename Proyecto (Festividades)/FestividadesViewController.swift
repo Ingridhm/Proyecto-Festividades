@@ -62,6 +62,7 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
             self.favoritos = newItems
             self.Tabla.reloadData()
         })
+        locationmanager.requestLocation()
     }
     
     func Estilos() {
@@ -180,6 +181,12 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
             alert.addAction(aceptar)
             present(alert, animated: true, completion: nil)
         }
+        else if (PaisField.text!.count > 2) {
+            let alert = UIAlertController(title: "Formato Erroneo", message: "Por favor ingrese un código de país válido", preferredStyle: .alert)
+            let aceptar = UIAlertAction(title: "Aceptar", style: .default, handler: nil)
+            alert.addAction(aceptar)
+            present(alert, animated: true, completion: nil)
+        }
         else {
             festividadesmanager.ObtenerFestividades(pais: PaisField.text!)
         }
@@ -195,15 +202,14 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
                 self.fechas.append(festividad.fecha[t])
                 self.dias.append(festividad.dia[t])
                 self.imagenes.append(UIImage(systemName: "suit.heart")!)
+                imagenes[t] = UIImage(systemName: "suit.heart")!
                 for favorito in self.favoritos {
                     if (favorito.nombre == festividad.nombre[t]) {
-                        if (favorito.favorito == true) {
-                            imagenes[t] = UIImage(systemName: "suit.heart.fill")!
-                            print("FAV: \(favorito.nombre) - \(festividad.nombre[t])")
-                        }
+                        imagenes[t] = UIImage(systemName: "suit.heart.fill")!
+                        print("FAV: \(favorito.nombre) - \(festividad.nombre[t])")
                     }
                 }
-                //self.imagenes.append(UIImage(systemName: "suit.heart")!)
+                print("\(nombres[t]) - \(imagenes[t])")
             }
             self.Tabla.reloadData()
         }
@@ -248,9 +254,10 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
                 self.paises.append("\(pais.codigo[p]) - \(pais.nombre[p])")
                 if (pais.nombre[p].capitalized == self.ubicacion.capitalized) {
                     print(pais.codigo[p])
-                    self.paisfield.text = pais.codigo[p]
+                    self.PaisField.text = pais.codigo[p]
                 }
             }
+            self.festividadesmanager.ObtenerFestividades(pais: self.PaisField.text!)
         }
     }
     
