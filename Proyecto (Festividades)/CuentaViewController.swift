@@ -14,6 +14,8 @@ class CuentaViewController: UIViewController, UICollectionViewDelegate, UICollec
     @IBOutlet weak var OpcionesGrid: UICollectionView!
     @IBOutlet weak var OpcionesView: UIView!
     
+    let defaults = UserDefaults.standard
+    
     let opciones = ["Configuración", "Favoritos", "Cerrar Sesión"]
     let images = [UIImage(named: "settings.svg"), UIImage(named: "favourites.svg"), UIImage(named: "logout.svg")]
     var seleccionado : String?
@@ -53,6 +55,7 @@ class CuentaViewController: UIViewController, UICollectionViewDelegate, UICollec
         else {
             do {
                 try Auth.auth().signOut()
+                self.defaults.set("MX", forKey: "Busqueda")
                 self.dismiss(animated: true, completion: nil)
             }
             catch (let error) {

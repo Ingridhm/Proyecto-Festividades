@@ -37,7 +37,7 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
     var favref: DatabaseReference?
     var ubicacion = ""
     let defaults = UserDefaults.standard
-    var busqueda = ""
+    var busqueda = "MX"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -87,6 +87,7 @@ class FestividadesViewController : UIViewController, UITableViewDelegate, UITabl
         self.defaults.set(self.PaisField.text, forKey: "Busqueda")
     }
     
+    //MARK:- TABLEVIEW
     //NUMERO DE FILAS
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return nombres.count
